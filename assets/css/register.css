@@ -13,6 +13,18 @@ body {
 .gelin-nav .navbar-nav .nav-link {
   color: #303030; }
 
+.register-form .block {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-top: 10px; }
+  .register-form .block .form-title {
+    text-align: center;
+    margin: 10px 0; }
+
+.register-form .form-footer {
+  margin: 10px 0;
+  text-align: center; }
+
 .pageNav-bg {
   height: 300px;
   width: 100%;
