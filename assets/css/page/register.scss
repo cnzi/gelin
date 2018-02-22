@@ -1,0 +1,67 @@
+body {
+    font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    color: black;
+}
+
+.nav-link {
+    color: black;
+    margin: 0 30px 0 0;
+}
+
+.gelin-nav {
+    .navbar-collapse {
+        background-color: #f8b62b;
+        margin: 0 -15px;
+    }
+    .navbar-nav .nav-link {
+        color: #303030;
+    }
+
+}
+
+
+
+.pageNav-bg {
+    height: 300px;
+    width: 100%;
+    background-image: url("../img/nav1.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .title-text {
+        padding-top: 100px;
+        text-align: center;
+    }
+}
+
+.main {
+    h1 {
+        font-size: 52px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .topbar {
+        text-align: center;
+        .step {
+            border: 1px solid #eee;
+            height: 50px;
+            line-height: 50px;
+        }
+        .step1 {
+            background-color: #f5ab35;
+        }
+    }
+}
+
+
+.pageTopText h1 {
+    font-size: 3vw;
+    padding-top: 100px;
+    padding-bottom: 2vw;
+    margin: 0 auto;
+}
+
+
+
+
+
