@@ -1,0 +1,325 @@
+html {
+    font-size: 14px;
+}
+
+@media(max-width: 960px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 540px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 540px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+body {
+    font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    color: black;
+}
+
+.nav-link {
+    color: black;
+    margin: 0 30px 0 0;
+}
+
+.navbar-nav {
+    background-color: #f8b62b;
+    padding: 10px 20px 10px 30px;
+}
+
+.navbar-collapse {
+    background-color: #f8b62b;
+}
+
+.navbar-default {
+    .navbar-nav {
+        li {
+            a {
+                color: #777;
+            }
+        }
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link:hover {
+            color: white;
+        }
+    }
+}
+
+.pageNav-bg {
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+}
+
+#pageNavbg {
+    background-image: url("../img/nav1.png");
+}
+
+.title-text {
+    margin-top: 150px;
+    color: #fff;
+}
+
+.circleYellow {
+    height: 20vw;
+    width: 20vw;
+    background-color: #f8c454;
+    font-size: 2.5vw;
+    border-radius: 10vw;
+    p {
+        font-size: 2.5vw;
+        padding-top: 5vw;
+    }
+    h3 {
+        font-size: 2.5vw;
+    }
+}
+
+.circleGray {
+    height: 20vw;
+    width: 20vw;
+    background-color: #585858;
+    border-radius: 10vw;
+    P {
+        font-size: 2.5vw;
+        color: #fff;
+        padding-top: 5vw;
+    }
+    h3 {
+        font-size: 2.5vw;
+        color: #fff;
+    }
+}
+
+.pageTop {
+    padding-top: 200px;
+}
+
+.pageTopText {
+    h1 {
+        font-size: 3vw;
+        padding-top: 100px;
+        padding-bottom: 2vw;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 2vw;
+        text-align: justify;
+    }
+}
+
+.pageSchedule {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    width: 100%;
+    h1 {
+        font-size: 3vw;
+        padding-bottom: 50px;
+        margin: 0 auto;
+    }
+    .container {
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.pageScheduleText {
+    p {
+        font-size: 1vw;
+    }
+}
+
+.schedulePic {
+    height: 85px;
+    width: 85px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.triangle {
+    line-height: 120px;
+}
+
+.pageScheduleCompetition {
+    float: left;
+    padding: 100px 10px 2px 10px;
+    position: relative;
+    overflow: hidden;
+    a {
+        width: 100%;
+        height: 100%;
+        float: left;
+        text-align: center;
+        position: relative;
+    }
+}
+
+.pageScheduleImg {
+    height: 100%;
+    width: 100%;
+}
+
+.picText {
+    background: #333;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+    color: white;
+}
+
+.picText {
+    p {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.picTextSelect {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.picTextSelect:hover {
+    background: #eeb60c;
+    opacity: 0.7;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+}
+
+.pageDownload {
+    padding-top: 100px;
+    background-position: center center;
+    background-size: cover;
+    h1 {
+        padding-bottom: 100px;
+    }
+}
+
+#pageDownloadbg {
+    background-image: url("../img/bg.png");
+}
+
+.pageDownloadItem {
+    border: 1px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.pageDownloadItem2 {
+    border: 2px;
+    border-style: solid;
+    border-color: #f8b62b;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pageDownloadItem2 {
+    div {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.pageDownloadPicText {
+    .container {
+        margin-top: 25px;
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            div {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.pageDownloadBtn {
+    width: 100%;
+    margin: 0 0 10px 0px;
+}
+
+.pageInformation {
+    h1 {
+        padding-top: 200px;
+    }
+}
+
+.pagePartner {
+    padding-bottom: 100px;
+    h1 {
+        padding: 200px 0 50px 0;
+    }
+    .container {
+        padding-top: 20px;
+    }
+}
+
+.pagePartnerPic {
+    border: 2px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.pagefooter {
+    background-color: #151a21;
+    height: 50px;
+    height: 100%;
+    p {
+        color: #8a8d90;
+        text-align: center;
+        line-height: 50px;
+        margin: 0;
+        padding: 0;
+        font-size: 1vw;
+    }
+}
