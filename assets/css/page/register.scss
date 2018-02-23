@@ -31,24 +31,30 @@ html {
 }
 
 .gelin-nav {
+    background: #323232;
     .navbar-collapse {
         background-color: #f8b62b;
         margin: 0 -15px;
+    }
+    .navbar-toggler {
+        background-color: #868686;
     }
     .navbar-nav .nav-link {
         color: #303030;
     }
     .logo {
         margin-right: 100px;
+        height: 3rem;
     }
 
 }
 
 .register-form {
     text-align: center;
+    padding-bottom: 0px;
     .block {
         border: 1px solid #eee;
-        padding: 10px;
+        padding: 10px 30px;
         margin-top: 10px;
         .form-title {
             text-align: center;
@@ -61,7 +67,8 @@ html {
     }
     label {
         line-height: 2rem;
-        text-align: right;
+        text-align: left;
+        padding: 5px;
         &:after {
             content: ':';
             margin: 0 2px;

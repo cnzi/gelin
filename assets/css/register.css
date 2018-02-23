@@ -21,21 +21,25 @@ html {
   color: black;
   margin: 0 30px 0 0; }
 
-.gelin-nav .navbar-collapse {
-  background-color: #f8b62b;
-  margin: 0 -15px; }
-
-.gelin-nav .navbar-nav .nav-link {
-  color: #303030; }
-
-.gelin-nav .logo {
-  margin-right: 100px; }
+.gelin-nav {
+  background: #323232; }
+  .gelin-nav .navbar-collapse {
+    background-color: #f8b62b;
+    margin: 0 -15px; }
+  .gelin-nav .navbar-toggler {
+    background-color: #868686; }
+  .gelin-nav .navbar-nav .nav-link {
+    color: #303030; }
+  .gelin-nav .logo {
+    margin-right: 100px;
+    height: 3rem; }
 
 .register-form {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 0px; }
   .register-form .block {
     border: 1px solid #eee;
-    padding: 10px;
+    padding: 10px 30px;
     margin-top: 10px; }
     .register-form .block .form-title {
       text-align: center;
@@ -45,7 +49,8 @@ html {
     text-align: center; }
   .register-form label {
     line-height: 2rem;
-    text-align: right; }
+    text-align: left;
+    padding: 5px; }
     .register-form label:after {
       content: ':';
       margin: 0 2px; }
