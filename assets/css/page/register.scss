@@ -3,6 +3,28 @@ body {
     color: black;
 }
 
+html {
+    font-size: 14px;
+}
+
+@media(max-width: 960px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 540px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 540px) {
+    html {
+        font-size: 10px;
+    }
+}
+
 .nav-link {
     color: black;
     margin: 0 30px 0 0;
@@ -16,10 +38,14 @@ body {
     .navbar-nav .nav-link {
         color: #303030;
     }
+    .logo {
+        margin-right: 100px;
+    }
 
 }
 
 .register-form {
+    text-align: center;
     .block {
         border: 1px solid #eee;
         padding: 10px;
@@ -32,6 +58,14 @@ body {
     .form-footer {
         margin: 10px 0;
         text-align: center;
+    }
+    label {
+        line-height: 2rem;
+        text-align: right;
+        &:after {
+            content: ':';
+            margin: 0 2px;
+        }
     }
 }
 .pageNav-bg {
@@ -49,7 +83,6 @@ body {
 
 .main {
     h1 {
-        font-size: 52px;
         text-align: center;
         margin-top: 20px;
     }
