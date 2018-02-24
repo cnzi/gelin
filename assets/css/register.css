@@ -33,6 +33,26 @@ html {
   .gelin-nav .logo {
     margin-right: 100px;
     height: 3rem; }
+  .gelin-nav .navbar-brand {
+    width: 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .gelin-nav .navbar-collapse {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0; }
+
+.pageNav-bg {
+  height: 300px;
+  width: 100%;
+  background-image: url("../img/nav1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+  .pageNav-bg .title-text {
+    padding-top: 100px;
+    text-align: center; }
 
 .register-form {
   text-align: center;

@@ -1,0 +1,17 @@
+@import './common';
+
+.ranking-container {
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    h6 {
+        text-align: right;
+    }
+    .my-pane {
+        padding: 30px;
+    }
+    .my-tabs {
+        border: 1px solid #eee;
+    }
+}
