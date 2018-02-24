@@ -54,6 +54,18 @@ html {
     padding-top: 100px;
     text-align: center; }
 
+.pagefooter {
+  background-color: #151a21;
+  height: 50px;
+  height: 100%; }
+  .pagefooter p {
+    color: #8a8d90;
+    text-align: center;
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw; }
+
 .ranking-container h1 {
   text-align: center;
   margin-top: 20px; }
