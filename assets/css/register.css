@@ -36,17 +36,24 @@ html {
 
 .register-form {
   text-align: center;
-  padding-bottom: 0px; }
+  padding-bottom: 50px; }
   .register-form .block {
     border: 1px solid #eee;
     padding: 10px 30px;
     margin-top: 10px; }
     .register-form .block .form-title {
       text-align: center;
-      margin: 10px 0; }
+      margin: 10px 0;
+      font-size: 1.5rem; }
   .register-form .form-footer {
     margin: 10px 0;
     text-align: center; }
+  .register-form .form-check {
+    line-height: 2rem; }
+    .register-form .form-check .read::after {
+      content: ''; }
+    .register-form .form-check .form-check-input {
+      margin-top: 0.9rem; }
   .register-form label {
     line-height: 2rem;
     text-align: left;

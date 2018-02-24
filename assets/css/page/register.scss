@@ -51,7 +51,7 @@ html {
 
 .register-form {
     text-align: center;
-    padding-bottom: 0px;
+    padding-bottom: 50px;
     .block {
         border: 1px solid #eee;
         padding: 10px 30px;
@@ -59,11 +59,21 @@ html {
         .form-title {
             text-align: center;
             margin: 10px 0;
+            font-size: 1.5rem;
         }
     }
     .form-footer {
         margin: 10px 0;
         text-align: center;
+    }
+    .form-check {
+        line-height: 2rem;
+        .read::after {
+            content: '';
+        }
+        .form-check-input {
+            margin-top: 0.9rem;
+        }
     }
     label {
         line-height: 2rem;

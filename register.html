@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,14 @@
     <link rel="stylesheet" href="assets/css/register.css">
     <!-- endbuild -->
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md fixed-top navbar-light gelin-nav">
         <a class="navbar-brand" href=".">
             <img src="assets/img/Logo.png" alt="" class="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -51,7 +54,8 @@
     <div class="pageNav">
         <div class="container-fulid pageNav-bg">
             <div class="title-text">
-                <h1><span style='color:#ffc105;'>国际青少年</span>科学与工程大会</h1>
+                <h1>
+                    <span style='color:#ffc105;'>国际青少年</span>科学与工程大会</h1>
             </div>
         </div>
     </div>
@@ -63,61 +67,103 @@
         </div>
     </div>
     <div class="container register-form">
-        <form>
-            <div class="block account">
-                <div class="form-title">账号信息</div>
-                <div class="form-group row">
-                    <label for="account-name" class="col-12 col-sm-2">账号名称</label>
-                    <input type="email" class="form-control col-12 col-sm-10" id="account-name" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group row">
-                    <label for="phone-number" class="col-12 col-sm-2">手机号</label>
-                    <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="Password">
-                </div>
-                <div class="form-group row">
-                    <label for="phone-number" class="col-12 col-sm-2">验证码</label>
-                    <input type="password" class="form-control col-8 col-sm-6" id="phone-number" placeholder="Password">
-                    <button type="submit" class="btn btn-primary col-4 col-sm-4">获取验证码</button>
-                </div>
-                <div class="form-group row">
-                    <label for="phone-number" class="col-12 col-sm-2">账号密码</label>
-                    <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="Password">
-                </div>
-                <div class="form-group row">
-                    <label for="phone-number" class="col-12 col-sm-2">请再次输入密码</label>
-                    <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="Password">
-                </div>
-            </div>
-            <div class="block register">
-                <div class="form-title">报名信息</div>
-                <div class="form-group row">
-                    <label for="exampleInputEmail1" class="col-8 col-sm-2">真实姓名</label>
-                    <input type="text" class="form-control col-8 col-sm-10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-8 col-sm-2">性别</label>
-                    <input type="password" class="form-control col-8 col-sm-10" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-8 col-sm-2">所在地区</label>
-                    <input type="password" class="form-control col-8 col-sm-10" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-8 col-sm-2">所在年级</label>
-                    <input type="password" class="form-control col-8 col-sm-10" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-8 col-sm-2">学校码</label>
-                    <input type="password" class="form-control col-8 col-sm-10" id="exampleInputPassword1" placeholder="Password">
+        <form class="needs-validation" novalidate>
+            <div class="block account row">
+                <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                    <div class="form-title">账号信息</div>
+                    <div class="form-group row">
+                        <label for="account-name" class="col-12 col-sm-2">账号名称</label>
+                        <input type="text" class="form-control col-12 col-sm-10" id="account-name" required placeholder="输入账号名称">
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone-number" class="col-12 col-sm-2">手机号</label>
+                        <input type="phone" class="form-control col-12 col-sm-10" id="phone-number" required placeholder="输入手机号">
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone-number" class="col-12 col-sm-2">验证码</label>
+                        <input type="text" class="form-control col-8 col-sm-7" id="phone-number" placeholder="输入验证码">
+                        <button class="btn btn-primary col-4 col-sm-3">获取验证码</button>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone-number" class="col-12 col-sm-2">账号密码</label>
+                        <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="输入密码">
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone-number" class="col-12 col-sm-2">请再次输入密码</label>
+                        <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="输入密码">
+                    </div>
                 </div>
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="read">你已经阅读并接受<span class="terms">&lt;&lt;大赛协议&gt;&gt;</span></label>
+            <div class="block register row">
+                <div class="col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3">
+                    <div class="form-title">报名信息</div>
+                    <div class="form-group row">
+                        <label class="col-4 col-sm-2">真实姓名</label>
+                        <input type="text" class="form-control col-8 col-sm-10" aria-describedby="emailHelp" placeholder="输入姓名">
+                    </div>
+                    <div class="form-group row">
+                        <label for="gender" class="col-4 col-sm-2">性别</label>
+                        <select id="gender" class="form-control col-8 col-sm-10">
+                            <option selected>男</option>
+                            <option>女</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-4 col-sm-2">所在地区</label>
+                        <select id="province" class="form-control col-4 col-sm-5">
+                            <option selected>北京市</option>
+                            <option>上海市</option>
+                        </select>
+                        <select id="county" class="form-control col-4 col-sm-5">
+                            <option selected>朝阳区</option>
+                            <option>海淀区</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-4 col-sm-2">所在年级</label>
+                        <select id="gender" class="form-control col-8 col-sm-10">
+                            <option selected>1-2年级</option>
+                            <option>3-4年级</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="school" class="col-4 col-sm-2">学校码</label>
+                        <input type="text" class="form-control col-8 col-sm-10" id="school" placeholder="输人学校码">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" value="" required>
+                    <label class="read form-check-label" for="terms">你已经阅读并接受
+                        <span class="terms">《大赛协议》</span>
+                    </label>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary col-4">完成报名</button>
         </form>
     </div>
     <script src="assets/js/main.js "></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 </body>
+
 </html>
