@@ -74,51 +74,30 @@ html {
   .pagination .page-link {
     color: #333; }
 
-.register-form {
-  text-align: center;
-  padding-bottom: 50px; }
-  .register-form .block {
-    border: 1px solid #eee;
-    padding: 10px 30px;
-    margin-top: 10px; }
-    .register-form .block .form-title {
-      text-align: center;
-      margin: 10px 0;
-      font-size: 1.5rem; }
-  .register-form .form-footer {
-    margin: 10px 0;
-    text-align: center; }
-  .register-form .form-check {
-    line-height: 2rem; }
-    .register-form .form-check .read::after {
-      content: ''; }
-    .register-form .form-check .form-check-input {
-      margin-top: 0.9rem; }
-  .register-form label {
-    line-height: 2rem;
-    text-align: left;
-    padding: 5px; }
-    .register-form label:after {
-      content: ':';
-      margin: 0 2px; }
-
-.main h1 {
-  text-align: center;
-  margin-top: 20px; }
-
-.main .topbar {
+.article-title {
+  padding: 2rem;
   text-align: center; }
-  .main .topbar .step {
-    border: 1px solid #eee;
-    height: 50px;
-    line-height: 50px; }
-  .main .topbar .step1 {
-    background-color: #f5ab35; }
 
-.pageTopText h1 {
-  font-size: 3vw;
-  padding-top: 100px;
-  padding-bottom: 2vw;
-  margin: 0 auto; }
+.article-body {
+  padding: 0 7rem;
+  text-align: center; }
+  .article-body img {
+    max-height: 30rem;
+    max-width: 100%;
+    margin-bottom: 1.2rem; }
+  .article-body p {
+    text-align: left; }
 
-/*# sourceMappingURL=register.css.map */
+@media (max-width: 960px) {
+  .article-body {
+    padding: 0 5rem; } }
+
+@media (min-width: 540px) {
+  .article-body {
+    padding: 0 3rem; } }
+
+@media (max-width: 540px) {
+  .article-body {
+    padding: 0 1rem; } }
+
+/*# sourceMappingURL=article.css.map */

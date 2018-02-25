@@ -1,0 +1,37 @@
+@import 'common';
+
+.article-title {
+    padding: 2rem;
+    text-align: center;
+}
+.article-body {
+    padding: 0 7rem;
+    text-align: center;
+    img {
+        max-height: 30rem;
+        max-width: 100%;
+        margin-bottom: 1.2rem;
+    }
+    p {
+        text-align: left;
+    }
+}
+
+
+@media(max-width: 960px) {
+    .article-body {
+        padding: 0 5rem;
+    }
+}
+
+@media(min-width: 540px) {
+    .article-body {
+        padding: 0 3rem;
+    }
+}
+
+@media(max-width: 540px) {
+    .article-body {
+        padding: 0 1rem;
+    }
+}
