@@ -13,5 +13,15 @@
     }
     .my-tabs {
         border: 1px solid #eee;
+        .nav-link {
+            &.active {
+                background-color: #fff;
+                border-bottom-color: transparent;
+            }
+            border-bottom: 1px solid #dee2e6;
+            background-color: #f5f9fa;
+            margin: 0;
+            width: 100%;
+        }
     }
 }

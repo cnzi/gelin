@@ -31,7 +31,6 @@ html {
   .gelin-nav .navbar-nav .nav-link {
     color: #303030; }
   .gelin-nav .logo {
-    margin-right: 100px;
     height: 3rem; }
   .gelin-nav .navbar-brand {
     width: 0;
@@ -56,15 +55,14 @@ html {
 
 .pagefooter {
   background-color: #151a21;
-  height: 50px;
+  height: 4rem;
   height: 100%; }
   .pagefooter p {
     color: #8a8d90;
     text-align: center;
-    line-height: 50px;
-    margin: 0;
-    padding: 0;
-    font-size: 1vw; }
+    line-height: 2rem;
+    padding: 2rem 1rem;
+    font-size: 1rem; }
 
 .ranking-container h1 {
   text-align: center;
@@ -78,5 +76,13 @@ html {
 
 .ranking-container .my-tabs {
   border: 1px solid #eee; }
+  .ranking-container .my-tabs .nav-link {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f5f9fa;
+    margin: 0;
+    width: 100%; }
+    .ranking-container .my-tabs .nav-link.active {
+      background-color: #fff;
+      border-bottom-color: transparent; }
 
 /*# sourceMappingURL=ranking.css.map */
