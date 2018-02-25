@@ -25,14 +25,19 @@ body {
     color: black;
 }
 
+.geling-nav {
+    background: #323232;
+}
+
 .nav-link {
+    font-size: 1.3rem;
     color: black;
-    margin: 0 30px 0 0;
+    margin: 0 2rem 0 0;
 }
 
 .navbar-nav {
     background-color: #f8b62b;
-    padding: 10px 20px 10px 30px;
+    padding: 1rem 2rem 1rem 3rem;
 }
 
 .navbar-collapse {
@@ -58,7 +63,7 @@ body {
 }
 
 .pageNav-bg {
-    height: 500px;
+    height: 550px;
     width: 100%;
     position: absolute;
     background-position: center center;
@@ -72,36 +77,61 @@ body {
 .title-text {
     margin-top: 150px;
     color: #fff;
+    div {
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.2rem;
+            padding: 2rem 0 1rem 0;
+        }
+    }
 }
 
 .circleYellow {
-    height: 20vw;
-    width: 20vw;
+    height: 20rem;
+    width: 20rem;
     background-color: #f8c454;
-    font-size: 2.5vw;
-    border-radius: 10vw;
-    p {
-        font-size: 2.5vw;
-        padding-top: 5vw;
-    }
-    h3 {
-        font-size: 2.5vw;
-    }
+    font-size: 2rem;
+    border-radius: 10rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .circleGray {
-    height: 20vw;
-    width: 20vw;
+    height: 20rem;
+    width: 20rem;
     background-color: #585858;
-    border-radius: 10vw;
-    P {
-        font-size: 2.5vw;
-        color: #fff;
-        padding-top: 5vw;
+    border-radius: 10rem;
+    font-size: 2rem;
+    color: white;
+    border-radius: 10rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 960px) {
+    .circleGray,
+    .circleYellow {
+        height: 14rem;
+        width: 14rem;
+        font-size: 1.3rem;
+        border-radius: 7rem;
     }
-    h3 {
-        font-size: 2.5vw;
-        color: #fff;
+}
+
+@media (max-width: 540px) {
+    .circleGray,
+    .circleYellow {
+        height: 8rem;
+        width: 8rem;
+        font-size: 1.3rem;
+        border-radius: 4rem;
     }
 }
 
@@ -111,13 +141,14 @@ body {
 
 .pageTopText {
     h1 {
-        font-size: 3vw;
+        font-size: 3rem;
         padding-top: 100px;
-        padding-bottom: 2vw;
+        padding-bottom: 4rem;
         margin: 0 auto;
     }
     p {
-        font-size: 2vw;
+        font-size: 1.5rem;
+        color: #8a8d90;
         text-align: justify;
     }
 }
@@ -127,7 +158,7 @@ body {
     padding-bottom: 200px;
     width: 100%;
     h1 {
-        font-size: 3vw;
+        font-size: 3rem;
         padding-bottom: 50px;
         margin: 0 auto;
     }
@@ -140,16 +171,29 @@ body {
 }
 
 .pageScheduleText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     p {
-        font-size: 1vw;
+        font-size: 1.4rem;
+    }
+    .pageScheduleP {
+        color: #6a6a6a;
+    }
+}
+
+@media (max-width: 960px) {
+    .pageScheduleText {
+        p {
+            font-size: 1rem;
+        }
     }
 }
 
 .schedulePic {
-    height: 85px;
-    width: 85px;
-    margin: 0 auto;
-    margin-bottom: 10px;
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 0.9rem;
     img {
         width: auto;
         height: 100%;
@@ -157,7 +201,7 @@ body {
 }
 
 .triangle {
-    line-height: 120px;
+    line-height: 10rem;
 }
 
 .pageScheduleCompetition {
@@ -188,10 +232,8 @@ body {
     top: 0;
     opacity: 0.7;
     color: white;
-}
-
-.picText {
     p {
+        font-size: 2rem;
         height: 100%;
         width: 100%;
         display: flex;
@@ -212,6 +254,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    p {
+        font-size: 1.5rem;
+        color: white;
+    }
 }
 
 .picTextSelect:hover {
@@ -235,6 +281,7 @@ body {
 }
 
 .pageDownloadItem {
+    font-size: 1.4rem;
     border: 1px;
     display: flex;
     justify-content: center;
@@ -259,6 +306,8 @@ body {
 }
 
 .pageDownloadPicText {
+    display: flex;
+    align-items: center;
     .container {
         margin-top: 25px;
         .row {
@@ -277,12 +326,41 @@ body {
 
 .pageDownloadBtn {
     width: 100%;
-    margin: 0 0 10px 0px;
+    margin: 0 0 1rem 0px;
+    color: white;
+}
+
+.pageDownloadBtn:hover {
+    color: black;
+}
+
+@media (max-width: 540px) {
+    .pageDownloadPic {
+        display: none;
+    }
 }
 
 .pageInformation {
     h1 {
-        padding-top: 200px;
+        padding: 200px 0 100px 0;
+        font-size: 3rem;
+    }
+    a {
+        margin-top: 50px;
+        background: #f7f7f7;
+        color: #ababab;
+    }
+}
+
+.pageInformationItem {
+    div {
+        img {
+            width: 100%;
+        }
+        p {
+            margin: 0.9rem 0 0.8rem 0;
+            color: #8a8d90
+        }
     }
 }
 
@@ -306,6 +384,5 @@ body {
     align-items: center;
     img {
         width: 100%;
-        padding: 20px;
     }
 }
