@@ -7,7 +7,7 @@ html {
 
 @media (min-width: 540px) {
   html {
-    font-size: 12px; } }
+    font-size: 14px; } }
 
 @media (max-width: 540px) {
   html {
@@ -29,8 +29,17 @@ body {
   background-color: #f8b62b;
   padding: 1rem 2rem 1rem 3rem; }
 
+.navbar-brand {
+  width: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
 .navbar-collapse {
-  background-color: #f8b62b; }
+  background-color: #f8b62b;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0; }
 
 .navbar-default .navbar-nav li a {
   color: #777; }
@@ -39,11 +48,14 @@ body {
   color: white; }
 
 .pageNav-bg {
-  height: 550px;
+  height: 50rem;
   width: 100%;
   position: absolute;
   background-position: center center;
   background-size: cover; }
+
+.pageNavContent {
+  height: 50rem; }
 
 #pageNavbg {
   background-image: url("../img/nav1.png"); }
@@ -52,11 +64,14 @@ body {
   margin-top: 150px;
   color: #fff; }
   .title-text div h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold; }
   .title-text div p {
     font-size: 1.2rem;
     padding: 2rem 0 1rem 0; }
+
+.circle {
+  margin: 1rem auto; }
 
 .circleYellow {
   height: 20rem;
@@ -64,7 +79,6 @@ body {
   background-color: #f8c454;
   font-size: 2rem;
   border-radius: 10rem;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,7 +98,6 @@ body {
   font-size: 2rem;
   color: white;
   border-radius: 10rem;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,12 +126,12 @@ body {
     border-radius: 4rem; } }
 
 .pageTop {
-  padding-top: 200px; }
+  margin-top: 3rem; }
 
 .pageTopText h1 {
-  font-size: 3rem;
-  padding-top: 100px;
-  padding-bottom: 4rem;
+  font-size: 2.8rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   margin: 0 auto; }
 
 .pageTopText p {
@@ -127,11 +140,11 @@ body {
   text-align: justify; }
 
 .pageSchedule {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
   width: 100%; }
   .pageSchedule h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     padding-bottom: 50px;
     margin: 0 auto; }
   .pageSchedule .container .row {
@@ -241,11 +254,11 @@ body {
   -webkit-transition: opacity 0.5s; }
 
 .pageDownload {
-  padding-top: 100px;
+  padding-top: 4rem;
   background-position: center center;
   background-size: cover; }
   .pageDownload h1 {
-    padding-bottom: 100px; }
+    padding-bottom: 4rem; }
 
 #pageDownloadbg {
   background-image: url("../img/bg.png"); }
@@ -312,11 +325,10 @@ body {
     display: none; } }
 
 .pageInformation h1 {
-  padding: 200px 0 100px 0;
-  font-size: 3rem; }
+  padding: 3rem 0 2rem 0; }
 
 .pageInformation a {
-  margin-top: 50px;
+  margin-top: 2rem;
   background: #f7f7f7;
   color: #ababab; }
 
@@ -328,9 +340,9 @@ body {
   color: #8a8d90; }
 
 .pagePartner {
-  padding-bottom: 100px; }
+  padding-bottom: 2rem; }
   .pagePartner h1 {
-    padding: 200px 0 50px 0; }
+    padding: 3rem 0 0 0; }
   .pagePartner .container {
     padding-top: 20px; }
 
@@ -348,5 +360,16 @@ body {
           align-items: center; }
   .pagePartnerPic img {
     width: 100%; }
+
+.pagefooter {
+  background-color: #151a21;
+  height: 4rem;
+  height: 100%; }
+  .pagefooter p {
+    color: #8a8d90;
+    text-align: center;
+    line-height: 2rem;
+    padding: 2rem 1rem;
+    font-size: 1rem; }
 
 /*# sourceMappingURL=home.css.map */
