@@ -64,6 +64,16 @@ html {
     padding: 2rem 1rem;
     font-size: 1rem; }
 
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .pagination .page-item.active .page-link {
+    border-color: #f8b62b;
+    background-color: #f8b62b; }
+  .pagination .page-link {
+    color: #333; }
+
 .register-form {
   text-align: center;
   padding-bottom: 50px; }

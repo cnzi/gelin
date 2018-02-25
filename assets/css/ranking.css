@@ -64,6 +64,16 @@ html {
     padding: 2rem 1rem;
     font-size: 1rem; }
 
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .pagination .page-item.active .page-link {
+    border-color: #f8b62b;
+    background-color: #f8b62b; }
+  .pagination .page-link {
+    color: #333; }
+
 .ranking-container h1 {
   text-align: center;
   margin-top: 20px; }
@@ -84,5 +94,10 @@ html {
     .ranking-container .my-tabs .nav-link.active {
       background-color: #fff;
       border-bottom-color: transparent; }
+
+.ranking-container .table tr th {
+  background-color: #f8b62b;
+  color: #fff;
+  vertical-align: middle; }
 
 /*# sourceMappingURL=ranking.css.map */

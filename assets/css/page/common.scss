@@ -79,3 +79,14 @@ html {
         font-size: 1rem;
     }
 }
+
+.pagination {
+    justify-content: center;
+    .page-item.active .page-link {
+        border-color: #f8b62b;
+        background-color: #f8b62b;
+    }
+    .page-link {
+        color: #333;
+    }
+}
