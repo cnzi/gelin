@@ -1,11 +1,17 @@
 @import 'common';
 .pageList {
     text-align: center;
+    margin-top: 2rem;
     .pageListItem {
-        .row div img {
-            max-height: 30rem;
-            max-width: 100%;
-            margin: 1.2rem;
+        .row div {
+            p {
+                color: #6a6a6a;
+            }
+            img {
+                max-height: 30rem;
+                max-width: 100%;
+                margin: 1.2rem;
+            }
         }
     }
     a {

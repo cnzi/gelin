@@ -19,8 +19,7 @@
         <a class="navbar-brand" href=".">
             <img src="assets/img/Logo.png" alt="" class="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -42,7 +41,7 @@
                         <a class="nav-link" href="#">大赛排行榜</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">大赛咨询</a>
+                        <a class="nav-link" href="#">大赛资讯</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">下载客户端</a>
@@ -60,7 +59,7 @@
         </div>
     </div>
     <div class="container main">
-        <h1>报名参赛</h1>
+        <h1>参赛报名</h1>
         <div class="topbar row">
             <div class="step step1 col-6">1. 填写报名信息</div>
             <div class="step col-6">2. 下载大赛客户端</div>
@@ -149,14 +148,14 @@
     <script src="assets/js/main.js "></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
+        (function() {
             'use strict';
-            window.addEventListener('load', function () {
+            window.addEventListener('load', function() {
                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
                 // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();

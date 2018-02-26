@@ -75,7 +75,10 @@ html {
     color: #333; }
 
 .pageList {
-  text-align: center; }
+  text-align: center;
+  margin-top: 2rem; }
+  .pageList .pageListItem .row div p {
+    color: #6a6a6a; }
   .pageList .pageListItem .row div img {
     max-height: 30rem;
     max-width: 100%;
