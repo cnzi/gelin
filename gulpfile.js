@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     htmlreplace = require('gulp-html-replace'),
     cssmin = require('gulp-cssmin');
 
-gulp.task("concatScripts", function () {
+gulp.task("concatScripts", ["js"], function () {
     return gulp.src([
         'assets/js/vendor/jquery-3.2.1.slim.min.js',
         'assets/js/vendor/popper.min.js',
@@ -25,6 +25,11 @@ gulp.task("concatScripts", function () {
         .pipe(maps.write('./'))
         .pipe(gulp.dest('static/assets/js'))
         .pipe(browserSync.stream());
+});
+
+gulp.task('js', function() {
+    return gulp.src("assets/js/page/*.js")
+        .pipe(gulp.dest('static/assets/js/page/'));
 });
 
 gulp.task("minifyScripts", ["concatScripts"], function () {
