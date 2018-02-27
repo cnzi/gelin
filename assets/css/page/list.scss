@@ -1,21 +1,39 @@
 @import 'common';
+
+@media(max-width: 540px) {
+    .pageList .pageListItem .row div img{
+       margin: 0;
+    }
+}
 .pageList {
     text-align: center;
     margin-top: 2rem;
     .pageListItem {
-        .row div {
+        margin-top: 1rem;
+        .row {
+            font-size: 1.3rem;
+            h2 {
+                font-size: 1.6rem;
+            }
             p {
                 color: #6a6a6a;
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+                height: 4.8rem;
+                margin-top: 1rem;
+                margin-bottom: 0;
+                overflow: hidden;
             }
             img {
                 max-height: 30rem;
                 max-width: 100%;
                 margin: 1.2rem;
+                margin-top:  0;
             }
         }
     }
     a {
-        margin: 2rem;
+        margin: 2rem 1rem;
         background: #f7f7f7;
         color: #ababab;
     }
