@@ -23,6 +23,14 @@ html {
     html {
         font-size: 10px;
     }
+    .gelin-nav {
+        .navbar-collapse {
+            background-color: transparent!important;
+        }
+        .nav-link {
+            color: #777!important;
+        }
+    }
 }
 
 .nav-link {
@@ -32,7 +40,7 @@ html {
 
 .gelin-nav {
     padding: 0.5rem 1rem;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(34,34,34,0.8);
     .navbar-collapse {
         background-color: #f8b62b;
         margin: 0 -15px;
