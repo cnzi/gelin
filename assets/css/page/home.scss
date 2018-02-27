@@ -18,6 +18,9 @@ html {
     html {
         font-size: 10px;
     }
+    .logo {
+        height: 3rem;
+    }
 }
 
 body {
@@ -78,6 +81,7 @@ body {
 
 .pageNavContent {
     height: 50rem;
+    overflow: hidden;
 }
 
 #pageNavbg {
