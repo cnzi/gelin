@@ -33,7 +33,7 @@ gulp.task('js', function() {
 });
 
 gulp.task("minifyScripts", ["concatScripts"], function () {
-    return gulp.src("static/assets/js/*.js")
+    return gulp.src(["static/assets/js/*.js", "static/assets/js/page/*.js"])
         .pipe(uglify())
         .pipe(rename(function (path) {
             path.extname = '.min.js';
@@ -92,8 +92,13 @@ gulp.task('statics', function() {
         .pipe(gulp.dest('static'));
 });
 
-gulp.task("build", ['minifyScripts', 'minifyCss', 'localize'], function () {
-    return gulp.src(['*.html', 'favicon.ico', 'assets/img/*'], { base: './' })
+gulp.task('build-img', function() {
+    return gulp.src(['static/assets/img/*'])
+        .pipe(gulp.dest('dist/assets/img'))
+});
+
+gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics', 'build-img'], function () {
+    return gulp.src(['static/*.html', 'static/favicon.ico'])
         .pipe(gulp.dest('dist/'));
 });
 
