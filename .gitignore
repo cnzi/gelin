@@ -46,3 +46,4 @@ node_modules/
 ### Distribution/build folder ###
 dist/
 static/
+.DS_Store

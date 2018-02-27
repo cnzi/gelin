@@ -112,13 +112,13 @@ gulp.task('localize', ['compileSass', 'concatScripts'], function () {
         .pipe(gulp.dest('static'));
 });
 
-gulp.task('serve', ['watchFiles', "localize", "statics"], function () {
+gulp.task('serve', ["statics", 'watchFiles', "localize"], function () {
     browserSync.init({
         server: "./static/"
     });
 
     gulp.watch("assets/css/**/*.scss", ['watchFiles']);
-    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("*.html", ['statics']).on('change', browserSync.reload);
 });
 
 gulp.task("default", ["clean", 'build'], function () {

@@ -10,7 +10,7 @@ html {
 
 @media(min-width: 540px) {
     html {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .geling-nav {
-    background: #323232;
+    background: rgba(0, 0, 0, .4);
 }
 
 .nav-link {
@@ -37,7 +37,7 @@ body {
 
 .navbar-nav {
     background-color: #f8b62b;
-    padding: 1rem 2rem 1rem 3rem;
+    // padding: 1rem 2rem 1rem 3rem;
 }
 
 .navbar-brand {

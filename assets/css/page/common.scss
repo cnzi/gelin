@@ -7,7 +7,7 @@ html {
     font-size: 14px;
 }
 
-@media(max-width: 960px) {
+@media(min-width: 960px) {
     html {
         font-size: 14px;
     }
@@ -31,7 +31,8 @@ html {
 }
 
 .gelin-nav {
-    background: #323232;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, .4);
     .navbar-collapse {
         background-color: #f8b62b;
         margin: 0 -15px;
@@ -39,15 +40,26 @@ html {
     .navbar-toggler {
         background-color: #868686;
     }
-    .navbar-nav .nav-link {
-        color: #303030;
+    .navbar-nav {
+        // padding: 1rem 2rem 1rem 3rem;
+        .nav-link {
+            font-size: 1.3rem;
+            &:hover {
+                color: white;
+            }
+            cursor: pointer;
+            color: rgba(0, 0, 0, 0.5);
+        }
     }
     .logo {
-        height: 3rem;
+        // height: 3rem;
     }
     .navbar-brand {
         width: 0;
-        flex: 1
+        flex: 1;
+    }
+    .nav-link {
+        font-size: 1.3rem;
     }
     .navbar-collapse {
         flex-grow: 0;
