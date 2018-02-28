@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
-    htmlreplace = require('gulp-html-replace'),
+    replace = require('gulp-replace'),
     cssmin = require('gulp-cssmin');
 
 gulp.task("concatScripts", ["js"], function () {
@@ -74,34 +74,36 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('clean', function () {
-    del(['dist', 'assets/css/main.css*', 'assets/js/main*.js*']);
+    del(['dist']);
 });
 
+// 修改引用的js和css路径为压缩文件
 gulp.task('renameSources', function () {
-    return gulp.src('*.html')
-        .pipe(htmlreplace({
-            'js': 'assets/js/main.min.js',
-            'css': 'assets/css/main.min.css'
-        }))
+    return gulp.src('static/*.html')
+        .pipe(replace(/\/?assets\/css\/(.*)\.css/g, '/assets/css/$1.min.css'))
+        .pipe(replace(/\/?assets\/js\/(.*)\.js/g, '/assets/js/$1.min.js'))
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('statics', function() {
+// 相关静态文件移动到static文件夹
+gulp.task('statics', ['build-img'], function() {
     return gulp.src(['*.html', '*.php', 'favicon.ico',
         "assets/img/**", "assets/fonts/**"], { base: './' })
         .pipe(gulp.dest('static'));
 });
 
+// 压缩图标到dist，todo: 压缩插件还没配置
 gulp.task('build-img', function() {
     return gulp.src(['static/assets/img/*'])
         .pipe(gulp.dest('dist/assets/img'))
 });
 
-gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics', 'build-img'], function () {
+gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics'], function () {
     return gulp.src(['static/*.html', 'static/favicon.ico'])
         .pipe(gulp.dest('dist/'));
 });
 
+// 国际化生成不同语言html
 gulp.task('localize', ['compileSass', 'concatScripts'], function () {
     return gulp.src('*.html')
         .pipe(i18n({
