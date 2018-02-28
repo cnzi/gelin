@@ -19,7 +19,8 @@
         <a class="navbar-brand" href=".">
             <img src="assets/img/Logo.png" alt="" class="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -80,16 +81,16 @@
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">验证码</label>
-                        <input type="text" class="form-control col-8 col-sm-7" id="phone-number" placeholder="输入验证码">
+                        <input type="text" class="form-control col-8 col-sm-7" id="code" placeholder="输入验证码">
                         <button class="btn btn-primary col-4 col-sm-3">获取验证码</button>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">账号密码</label>
-                        <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="输入密码">
+                        <input type="password" class="form-control col-12 col-sm-10" id="password" placeholder="输入密码">
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">请再次输入密码</label>
-                        <input type="password" class="form-control col-12 col-sm-10" id="phone-number" placeholder="输入密码">
+                        <input type="password" class="form-control col-12 col-sm-10" id="password2" placeholder="输入密码">
                     </div>
                 </div>
             </div>
@@ -147,15 +148,31 @@
     </footer>
     <script src="assets/js/main.js "></script>
     <script>
+        function skipInput(e) {
+            var inputs = $(".form-control");//获取登录页面的input标签
+            if (e.keyCode == 13) {
+                for (var i = 0; i < inputs.length; i++) {
+                    //循环input标签的数量
+                    if (i == (inputs.length - 1)) {
+                        // 到最后一个标签
+                        break;
+                    } else if (e.target == inputs[i]) {
+                        inputs[i + 1].focus();
+                        break;
+                    }
+                }
+            }
+        }
         // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
+        (function () {
             'use strict';
-            window.addEventListener('load', function() {
+            $('.form-control').keypress(skipInput);
+            window.addEventListener('load', function () {
                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
                 // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
