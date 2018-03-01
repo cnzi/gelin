@@ -38,6 +38,33 @@ body {
     margin: 0 2rem 0 0;
 }
 
+.lang-item {
+    padding: 0.5rem 1rem;
+    a {
+        color: black;
+        text-decoration: none
+    }
+    .nav-lang {
+        font-size: 1.3rem;
+        padding: 0;
+    }
+    .langCN {
+        display: inline-block;
+        a {
+            color: white;
+            border: solid black;
+            background: black;
+        }
+    }
+    .langEN {
+        display: inline-block;
+        a {
+            color: black;
+            border: solid;
+        }
+    }
+}
+
 .navbar-nav {
     background-color: #f8b62b;
     // padding: 1rem 2rem 1rem 3rem;
@@ -53,21 +80,20 @@ body {
     flex-grow: 0;
 }
 
-.navbar-default {
-    .navbar-nav {
-        li {
-            a {
-                color: #777;
-            }
-        }
-    }
-}
-
 .navbar-light {
     .navbar-nav {
         .nav-link:hover {
             color: white;
         }
+    }
+}
+
+@media(max-width: 816px) {
+    .nav-link {
+        font-size: 1.1rem;
+    }
+    .nav-lang {
+        font-size: 1.1rem;
     }
 }
 
@@ -131,7 +157,27 @@ body {
     justify-content: center;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1122px) {
+    .circleGray,
+    .circleYellow {
+        height: 18rem;
+        width: 18rem;
+        font-size: 1.5rem;
+        border-radius: 9rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .circleGray,
+    .circleYellow {
+        height: 15rem;
+        width: 15rem;
+        font-size: 1.3rem;
+        border-radius: 7.5rem;
+    }
+}
+
+@media (max-width: 900px) {
     .circleGray,
     .circleYellow {
         height: 14rem;
@@ -141,13 +187,90 @@ body {
     }
 }
 
+@media (max-width: 800px) {
+    .circleGray,
+    .circleYellow {
+        height: 13rem;
+        width: 13rem;
+        font-size: 1.3rem;
+        border-radius: 6.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .circleGray,
+    .circleYellow {
+        height: 11rem;
+        width: 11rem;
+        font-size: 1.2rem;
+        border-radius: 5.5rem;
+    }
+}
+
+@media (max-width: 582px) {
+    .circleGray,
+    .circleYellow {
+        height: 9rem;
+        width: 9rem;
+        font-size: 1.2rem;
+        border-radius: 4.5rem;
+    }
+}
+
 @media (max-width: 540px) {
     .circleGray,
     .circleYellow {
         height: 8rem;
         width: 8rem;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         border-radius: 4rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .circleGray,
+    .circleYellow {
+        height: 7rem;
+        width: 7rem;
+        font-size: 1.2rem;
+        border-radius: 3.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .circleGray,
+    .circleYellow {
+        height: 6rem;
+        width: 6rem;
+        font-size: 1.1rem;
+        border-radius: 3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .circleGray,
+    .circleYellow {
+        height: 5.8rem;
+        width: 5.8rem;
+        font-size: 1.1rem;
+        border-radius: 2.9rem;
+    }
+    .circle p {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 354px) {
+    .circleGray,
+    .circleYellow {
+        padding-top: 1rem;
+        height: 5rem;
+        width: 5rem;
+        font-size: 1.1rem;
+        border-radius: 2.5rem;
+    }
+    .circle p {
+        transform: scale(0.8);
     }
 }
 
