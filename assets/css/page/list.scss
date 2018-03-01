@@ -24,9 +24,12 @@
                 margin-bottom: 0;
                 overflow: hidden;
             }
+            .cover {
+                background: url('/assets/img/Logo.png') #eee center center no-repeat; 
+                background-size: contain;
+            }
             img {
                 max-height: 30rem;
-                max-width: 100%;
                 margin: 1.2rem;
                 margin-top:  0;
             }

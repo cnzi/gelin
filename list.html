@@ -57,66 +57,7 @@
     </div>
 
     <div class="pageList">
-        <div class="container pageListItem">
-            <div class="row">
-                <div class="text-right col-4 ">
-                    <img src="assets/img/list1.png" alt="">
-                </div>
-                <div class="text-left col-8 pageListItemRight">
-                    <h2>资讯标题内容资讯标题内容资讯标题内容</h2>
-                    <p>9月21日，备受瞩目的“SmartShow万里行”活动走进江苏南京，与当地资深教育集成商共话教育信息化发展方向及渠道拓展经验。北京格如灵科技有限公司的CEO张琨在大会发表精彩演讲。他指出， “VR是一次重新定义教育的机会。</p>
-                    2017-06-18
-                </div>
-            </div>
-        </div>
-
-        <div class="container pageListItem">
-            <div class="row">
-                <div class="text-right col-4">
-                    <img src="assets/img/list2.png" alt="">
-                </div>
-                <div class="text-left col-8 pageListItemRight">
-                    <h2>资讯标题内容资讯标题内容资讯标题内容</h2>
-                    <p>9月21日，备受瞩目的“SmartShow万里行”活动走进江苏南京，与当地资深教育集成商共话教育信息化发展方向及渠道拓展经验。北京格如灵科技有限公司的CEO张琨在大会发表精彩演讲。他指出， “VR是一次重新定义教育的机会。</p>
-                    2017-06-18
-                </div>
-            </div>
-        </div>
-        <div class="container pageListItem">
-            <div class="row">
-                <div class="text-right col-4">
-                    <img src="assets/img/list3.png" alt="">
-                </div>
-                <div class="text-left col-8 pageListItemRight">
-                    <h2>资讯标题内容资讯标题内容资讯标题内容</h2>
-                    <p>9月21日，备受瞩目的“SmartShow万里行”活动走进江苏南京，与当地资深教育集成商共话教育信息化发展方向及渠道拓展经验。北京格如灵科技有限公司的CEO张琨在大会发表精彩演讲。他指出， “VR是一次重新定义教育的机会。</p>
-                    2017-06-18
-                </div>
-            </div>
-        </div>
-        <div class="container pageListItem">
-            <div class="row">
-                <div class="text-right col-4">
-                    <img src="assets/img/list4.png" alt="">
-                </div>
-                <div class="text-left col-8">
-                    <h2>资讯标题内容资讯标题内容资讯标题内容</h2>
-                    <p>9月21日，备受瞩目的“SmartShow万里行”活动走进江苏南京，与当地资深教育集成商共话教育信息化发展方向及渠道拓展经验。北京格如灵科技有限公司的CEO张琨在大会发表精彩演讲。他指出， “VR是一次重新定义教育的机会。</p>
-                    2017-06-18
-                </div>
-            </div>
-        </div>
-        <div class="container pageListItem">
-            <div class="row">
-                <div class="text-right col-4">
-                    <img src="assets/img/list5.png" alt="">
-                </div>
-                <div class="text-left col-8">
-                    <h2>资讯标题内容资讯标题内容资讯标题内容</h2>
-                    <p>9月21日，备受瞩目的“SmartShow万里行”活动走进江苏南京，与当地资深教育集成商共话教育信息化发展方向及渠道拓展经验。北京格如灵科技有限公司的CEO张琨在大会发表精彩演讲。他指出， “VR是一次重新定义教育的机会。</p>
-                    2017-06-18
-                </div>
-            </div>
+        <div class="" id="articleList">
         </div>
         <a class="btn btn-lg btn-light" href="">加载更多</a>
 
@@ -125,6 +66,39 @@
         <p> Copyright © 2016 - 2020 Growlib.com. All Rights Reserved. 京ICP备16064072号-1 格如灵科技 版权所有 Tel:010-87798847</p>
     </footer>
     <script src="assets/js/main.js "></script>
+    <script src="assets/js/page/jquery.tmpl.js "></script>
+    <script id="articleTemplate" type="text/x-jquery-tmpl">
+        {{each(i, item) list}}
+        <div class="container pageListItem">
+            <div class="row">
+                <div class="text-right cover col-4 ">
+                    <img src="${item.more.thumbnail}" alt="">
+                </div>
+                <div class="text-left col-8 pageListItemRight">
+                    <h2>${item.post_title}</h2>
+                    <p>${item.post_content}</p>
+                    2017-06-18
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/javascript">
+        function loadList() {
+            $.ajax({
+                dataType: "json",
+                url: "http://cmf.growlib.cn:8011/api/portal/articles",
+                success: function(r) {
+                    $("#articleTemplate").tmpl({
+                        list: r.data,
+                    }).appendTo("#articleList");
+                }
+            });
+        }
+        $(function() {
+            loadList();
+        });
+    </script>
 </body>
 
 </html>
