@@ -120,7 +120,8 @@ gulp.task('serve', ["statics", 'watchFiles', "localize"], function () {
     });
 
     gulp.watch("assets/css/**/*.scss", ['watchFiles']);
-    gulp.watch("*.html", ['statics']).on('change', browserSync.reload);
+    gulp.watch("*.html", ['statics']);
+    gulp.watch("static/*.html").on('change', browserSync.reload);
 });
 
 gulp.task("default", ["clean", 'build'], function () {
