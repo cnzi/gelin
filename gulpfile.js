@@ -87,7 +87,7 @@ gulp.task('renameSources', function () {
 
 // 相关静态文件移动到static文件夹
 gulp.task('statics', ['build-img'], function() {
-    return gulp.src(['*.html', '*.php', 'favicon.ico',
+    return gulp.src(['favicon.ico',
         "assets/img/**", "assets/fonts/**"], { base: './' })
         .pipe(gulp.dest('static'));
 });
@@ -120,7 +120,7 @@ gulp.task('serve', ["statics", 'watchFiles', "localize"], function () {
     });
 
     gulp.watch("assets/css/**/*.scss", ['watchFiles']);
-    gulp.watch("*.html", ['statics']);
+    gulp.watch("*.html", ['statics', 'localize']);
     gulp.watch("static/*.html").on('change', browserSync.reload);
 });
 
