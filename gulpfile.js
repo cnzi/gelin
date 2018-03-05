@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
     replace = require('gulp-replace'),
-    cssmin = require('gulp-cssmin');
+    cssmin = require('gulp-cssmin'),
+    htmlPartial = require('gulp-html-partial');
 
 gulp.task("concatScripts", ["js"], function () {
     return gulp.src([
@@ -106,6 +107,9 @@ gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics'], functi
 // 国际化生成不同语言html
 gulp.task('localize', ['compileSass', 'concatScripts'], function () {
     return gulp.src('*.html')
+        .pipe(htmlPartial({
+            basePath: 'parts/'
+        }))
         .pipe(i18n({
             langDir: './lang',
             trace: true,
@@ -124,6 +128,6 @@ gulp.task('serve', ["statics", 'watchFiles', "localize"], function () {
     gulp.watch("static/*.html").on('change', browserSync.reload);
 });
 
-gulp.task("default", ["clean", 'build'], function () {
+gulp.task("default", ['build'], function () {
     gulp.start('renameSources');
 });
