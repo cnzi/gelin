@@ -43,7 +43,7 @@ html {
 
 .gelin-nav {
     padding: 0.5rem 1rem;
-    background: rgba(34,34,34,0.8);
+    background: rgba(34, 34, 34, 0.8);
     .navbar-collapse {
         background-color: #f8b62b;
         margin: 0 -15px;
@@ -74,6 +74,34 @@ html {
     }
     .navbar-collapse {
         flex-grow: 0;
+    }
+}
+
+.lang-item {
+    padding: 0.5rem 1rem;
+    font-size: 0;
+    a {
+        color: black;
+        text-decoration: none
+    }
+    .nav-lang {
+        font-size: 1.3rem;
+        padding: 0;
+    }
+    .langCN {
+        display: inline-block;
+        a {
+            color: white;
+            border: solid black;
+            background: black;
+        }
+    }
+    .langEN {
+        display: inline-block;
+        a {
+            color: black;
+            border: solid;
+        }
     }
 }
 
