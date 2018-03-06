@@ -87,16 +87,16 @@ gulp.task('renameSources', function () {
 });
 
 // 相关静态文件移动到static文件夹
-gulp.task('statics', ['build-img'], function() {
+gulp.task('statics', function() {
     return gulp.src(['favicon.ico',
-        "/assets/img/**", "assets/fonts/**"], { base: './' })
-        .pipe(gulp.dest('static'));
+        "assets/img/*", "assets/fonts/**"], { base: './' })
+        .pipe(gulp.dest('static/'));
 });
 
 // 压缩图标到dist，todo: 压缩插件还没配置
 gulp.task('build-img', function() {
     return gulp.src(['static/assets/img/*'])
-        .pipe(gulp.dest('dist/assets/img'))
+        .pipe(gulp.dest('dist/assets/img/'))
 });
 
 gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics'], function () {
