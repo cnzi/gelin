@@ -35,18 +35,20 @@
     <script src="assets/js/page/jquery.tmpl.js "></script>
     <script id="articleTemplate" type="text/x-jquery-tmpl">
         {{each(i, item) list}}
-        <div class="container pageListItem">
-            <div class="row">
-                <div class="text-right cover col-4 ">
-                    <img src="${item.more.thumbnail}" alt="">
+            <a href="/article/${item.id}">
+                <div class="container pageListItem">
+                    <div class="row">
+                        <div class="text-right cover col-4 ">
+                            <img src="${item.more.thumbnail}" alt="">
+                        </div>
+                        <div class="text-left col-8 pageListItemRight">
+                            <h2>${item.post_title}</h2>
+                            <p>${item.post_excerpt}</p>
+                            2017-06-18
+                        </div>
+                    </div>
                 </div>
-                <div class="text-left col-8 pageListItemRight">
-                    <h2>${item.post_title}</h2>
-                    <p>${item.post_content}</p>
-                    2017-06-18
-                </div>
-            </div>
-        </div>
+            </a>
         {{/each}}
     </script>
     <script type="text/javascript">

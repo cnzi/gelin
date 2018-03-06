@@ -247,18 +247,20 @@
     <script id="articleTemplate" type="text/x-jquery-tmpl">
         {{each(i, item) list}}
         <div class="col-md-6 col-12">
-            <div class="container">
-                <div class="row pageInformationItem">
-                    <div class="col-6">
-                        <img src="${item.more.thumbnail}" alt="">
-                    </div>
-                    <div class="text-left col-6">
-                        <h4>${item.post_title}</h4>
-                        <p>${item.post_excerpt}</p>
-                        ${item.published_time}
+            <a href="/aricle/${item.id}" target="_blank">
+                <div class="container">
+                    <div class="row pageInformationItem">
+                        <div class="col-6">
+                            <img src="${item.more.thumbnail}" alt="">
+                        </div>
+                        <div class="text-left col-6">
+                            <h4>${item.post_title}</h4>
+                            <p>${item.post_excerpt}</p>
+                            ${item.published_time}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
 
         {{/each}}
