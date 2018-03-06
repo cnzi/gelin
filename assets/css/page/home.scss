@@ -3,7 +3,6 @@ html {
 }
 
 @import 'common.scss';
-
 @media(min-width: 960px) {
     html {
         font-size: 14px;
@@ -53,9 +52,6 @@ body {
     color: black;
     margin: 0 2rem 0 0;
 }
-
-
-
 
 .pageNav-bg {
     height: 50rem;
@@ -314,6 +310,16 @@ body {
             }
         }
     }
+}
+
+.btn-info {
+    background-color: #29d6e5;
+    border: #29d6e5;
+}
+
+.btn-success {
+    background-color: #5fcc5f;
+    border: #5fcc5f;
 }
 
 .pageDownloadBtn {

@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <!-- nav -->
     <partial src="nav.html" active="home"></partial>
 
@@ -243,105 +244,34 @@
     <!-- end pageDownload -->
 
     <!-- pageInformation -->
+    <script id="articleTemplate" type="text/x-jquery-tmpl">
+        {{each(i, item) list}}
+        <div class="col-md-6 col-12">
+            <div class="container">
+                <div class="row pageInformationItem">
+                    <div class="col-6">
+                        <img src="${item.more.thumbnail}" alt="">
+                    </div>
+                    <div class="text-left col-6">
+                        <h4>${item.post_title}</h4>
+                        <p>${item.post_excerpt}</p>
+                        ${item.published_time}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+    </script>
+    <!-- end pageInformation -->
+
+    <!-- pageInformation -->
     <div class="pageInformation text-center">
         <h1>__(index.informationTitle)__</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <div class="container">
-                        <div class="row pageInformationItem">
-                            <div class="col-6">
-                                <img src="/assets/img/info1.png" alt="">
-                            </div>
-                            <div class="text-left col-6">
-                                <h2>资讯标题文字</h2>
-                                <p>资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题</p>
-                                2018-02-25
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-12">
-                    <div class="container">
-                        <div class="row pageInformationItem">
-                            <div class="col-6">
-                                <img src="/assets/img/info2.png" alt="">
-                            </div>
-                            <div class="text-left col-6">
-                                <h2>资讯标题文字</h2>
-                                <p>资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题</p>
-                                2018-02-25
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <div class="container">
-                        <div class="row pageInformationItem">
-                            <div class="col-6">
-                                <img src="/assets/img/info1.png" alt="">
-                            </div>
-                            <div class="text-left col-6">
-                                <h2>资讯标题文字</h2>
-                                <p>资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题</p>
-                                2018-02-25
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="articleList">
 
-                <div class="col-md-6 col-12">
-                    <div class="container">
-                        <div class="row pageInformationItem">
-                            <div class="col-6">
-                                <img src="/assets/img/info2.png" alt="">
-                            </div>
-                            <div class="text-left col-6">
-                                <h2>资讯标题文字</h2>
-                                <p>资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题</p>
-                                2018-02-25
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <div class="container">
-                        <div class="row pageInformationItem">
-                            <div class="col-6">
-                                <img src="/assets/img/info1.png" alt="">
-                            </div>
-                            <div class="text-left col-6">
-                                <h2>资讯标题文字</h2>
-                                <p>资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题</p>
-                                2018-02-25
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-                    <div class="container">
-                        <div class="row pageInformationItem">
-                            <div class="col-6">
-                                <img src="/assets/img/info2.png" alt="">
-                            </div>
-                            <div class="text-left col-6">
-                                <h2>资讯标题文字</h2>
-                                <p>资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题文字资讯标题</p>
-                                2018-02-25
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <a class="btn btn-lg btn-light" href="list-cn.html">查看全部</a>
@@ -522,6 +452,24 @@
     <!-- build:js -->
     <script src="assets/js/main.js "></script>
     <script src="assets/js/page/home.js "></script>
+    <script src="assets/js/page/jquery.tmpl.js "></script>
+
+    <script type="text/javascript">
+        function loadList() {
+            $.ajax({
+                dataType: "json",
+                url: "http://cmf.growlib.cn:8011/api/portal/lists/recommended?field=id,post_excerpt,post_title,published_time,more",
+                success: function(r) {
+                    $("#articleTemplate").tmpl({
+                        list: r.data.list,
+                    }).appendTo("#articleList");
+                }
+            });
+        }
+        $(function() {
+            loadList();
+        });
+    </script>
     <!-- endbuild -->
 </body>
 
