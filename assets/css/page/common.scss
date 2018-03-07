@@ -26,6 +26,11 @@ html {
     }
 }
 
+@media(max-width: 900px) {
+    .logo {
+        height: 3rem;
+    }
+}
 @media(max-width: 767px) {
     html {
         font-size: 10px;
