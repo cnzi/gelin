@@ -27,7 +27,9 @@ html {
 }
 
 @media(max-width: 767px) {
-
+    html {
+        font-size: 10px;
+    }
     .gelin-nav {
         .navbar-collapse {
             background-color: rgba(34, 34, 34, 0.8)!important;
