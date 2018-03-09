@@ -106,33 +106,6 @@ html {
     }
 }
 
-.lang-item {
-    padding: 0.5rem 1rem;
-    font-size: 0;
-    a {
-        color: black;
-        text-decoration: none
-    }
-    .nav-lang {
-        font-size: 1.3rem;
-        padding: 0;
-    }
-    .langCN {
-        display: inline-block;
-        a {
-            color: white;
-            border: solid black;
-            background: black;
-        }
-    }
-    .langEN {
-        display: inline-block;
-        a {
-            color: black;
-            border: solid;
-        }
-    }
-}
 
 .pageNav-bg {
     height: 300px;
@@ -183,25 +156,24 @@ html {
     font-size: 0;
     a {
         color: black;
-        text-decoration: none
+        text-decoration: none;
+        border: solid black;
+        display: inline-block;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+    }
+    .active {
+        background: black;
+        a {
+            color: white;
+        }
     }
     .nav-lang {
         font-size: 1.3rem;
         padding: 0;
     }
-    .langCN {
+    .lang {
         display: inline-block;
-        a {
-            color: white;
-            border: solid black;
-            background: black;
-        }
-    }
-    .langEN {
-        display: inline-block;
-        a {
-            color: black;
-            border: solid;
-        }
     }
 }

@@ -76,10 +76,10 @@
                 </li>
                 <li class="nav-item">
                     <div class="lang-item">
-                        <div class="langCN">
+                        <div class="lang">
                             <a class="nav-lang" href="?lang=cn">中</a>
                         </div>
-                        <div class="langEN">
+                        <div class="lang">
                             <a class="nav-lang" href="?lang=en">EN</a>
                         </div>
                     </div>
@@ -87,4 +87,25 @@
             </ul>
         </div>
     </div>
+    <script>
+        function getQueryVariable(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+        var lang = getQueryVariable('lang');
+        if(lang == 'en') {
+            document.querySelector('.lang-item div:first-child').className = 'lang';
+            document.querySelector('.lang-item div:last-child').className = 'lang active';
+
+        } else {
+            document.querySelector('.lang-item div:first-child').className = 'lang active';
+            document.querySelector('.lang-item div:last-child').className = 'lang';
+        }
+    </script>
 </nav>
