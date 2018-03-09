@@ -99,7 +99,7 @@ gulp.task('build-img', function() {
         .pipe(gulp.dest('dist/assets/img/'))
 });
 
-gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics'], function () {
+gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics', 'build-img'], function () {
     return gulp.src(['static/*.html', 'static/favicon.ico'])
         .pipe(gulp.dest('dist/'));
 });

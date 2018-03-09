@@ -23,11 +23,14 @@
 .headContent {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    .headline {
+        margin-left: 2rem;
+    }
     .head-right {
         display: flex;
         justify-content: flex-end;
         .headline {
-            margin-left: 1rem;
+            margin-left: 2rem;
             h1 {
                 color: #ec7016;
             }
