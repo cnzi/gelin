@@ -1,13 +1,11 @@
 {
     "title1": "International Youth",
     "title2": "Technology and Engineering Conference",
-    "headline1": "评委专家组",
     "headline2": "Participating teams",
     "junior": "Lower Primary Group (Year 1-2)",
     "middle": "Middle Primary Group (Year 3-4)",
     "seniorGrade": "Upper Primary Group (Year 5-6)",
     "juniorHigh": "Secondary Group (Year 7-8)",
-    "groutNote": "以知识点、操作复杂程度和该年龄段的科学素养标准为设计不同组别的题目。",
 
     "headline3": "The first form of activity",
     "mode1Title": "The head of head",
@@ -16,12 +14,10 @@
 
     "headline4": "The second form of activity.",
     "mode2Title": "City Top Gear",
-    "mode2Content1": "交通灯：分为计时红灯和绿灯状态。NPC车辆和交通灯不会同 时出现。",
-    "mode2Content2": "●计时统计最小精准到10毫秒。速度越快积分越高,计入 排行榜。",
-    "mode2Content3": "●NPC车辆主要出现在行车道。包括：摩托车、轿车、 货车，以不同的体积和速度制造难度。",
-    "mode2Content4": "●交通灯：分为计时红灯和绿灯状态。NPC车辆和交通灯不会同 时出现。",
+    "mode2Content1": "Programming Project includes three tasks: vehicle Exterior Design, Modification and Programming Racing.",
+    "mode2Content2": "Participants control the movement and parameter changes of vehicles in urban scenes through a programming module. There will be two lanes: carriageway and overtaking lane. There will be NPC vehicles and traffic lights in the scene as obstacles. ",
 
-    "headline5": "评分标准一",
+    "headline5": "The criteria for the first project",
     "score1Title": "Science Brain Scorcher",
     "score1Content1": "Wrong answer will not be calculated. ",
     "score1Content2": "If all questions are answered correctly, then:Point 100: Count-down timer remaining 9 seconds or more",
@@ -34,8 +30,9 @@
     "score1Content9": "Point 30: remaining 2 seconds or more",
     "score1Content10": "Point 20: remaining 1 seconds or more",
     "score1Content11": "If zero second is left, there will be no points. ",
+    "fistCriteria": "Science Brain Scorcher accounts for 40% of the total score",
 
-    "headline6": "The criteria for the second project.",
+    "headline6": "The criteria for the second project",
     "score2Title": "City Top Gear",
     "score2Content1": "Game Failed: ",
     "score2Content2": "Game is considered failed if the user’s vehicle collided with another vehicle, ran through a red light, or continuously drive on the overtaking lane for more than 10 seconds.",
@@ -44,6 +41,7 @@
     "score2Content5": "4:59:99——4:00:00:（30000-millisecond/10）*1",
     "score2Content6": "3:59:99——3:00:00: 6000+（24000-milliseconds/10）*2",
     "score2Content7": "2:59:99 and less: 12000+（18000-milliseconds/10）*3",
+    "secondCriteria": "Science Brain Scorcher accounts for 60% of the total score",
 
     "headline7": "System EVAEALUATION REPORT",
     "reportTitle1": "城市选拔阶段",

@@ -89,7 +89,7 @@ gulp.task('renameSources', function () {
 // 相关静态文件移动到static文件夹
 gulp.task('statics', function() {
     return gulp.src(['favicon.ico',
-        "assets/img/*", "assets/fonts/**"], { base: './' })
+        "assets/img/*", "assets/img/**/*", "assets/fonts/**"], { base: './' })
         .pipe(gulp.dest('static/'));
 });
 

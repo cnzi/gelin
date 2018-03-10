@@ -26,7 +26,7 @@
 }
 
 .headline {
-    margin-left: 1rem;
+    margin: 0 1rem;
     h1 {
         line-height: 70px;
         color: #ec7016;
@@ -54,14 +54,12 @@
     .line1 {
         position: absolute;
         top: 0;
-        left: 365px;
-        width: 300px;
+        right: 30px;
     }
     .line2 {
         position: absolute;
-        top: 65px;
-        left: 365px;
-        width: 300px;
+        top: 60px;
+        right: 30px;
     }
 }
 
