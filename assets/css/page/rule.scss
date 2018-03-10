@@ -1,6 +1,6 @@
 @import 'common';
 .content {
-    margin-top: 2rem;
+    margin-top: 5rem;
     .row {
         .col-1 {
             width: 100%;
@@ -23,8 +23,13 @@
 .headContent {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    .headline {
-        margin-left: 2rem;
+}
+
+.headline {
+    margin-left: 1rem;
+    h1 {
+        line-height: 70px;
+        color: #ec7016;
     }
     .head-right {
         display: flex;
@@ -72,6 +77,9 @@
 
 .GroupItem {
     padding: 0;
+    .GroupText {
+        line-height: 40px;
+    }
     div {
         img {
             /*width: 100%;*/
