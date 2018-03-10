@@ -95,7 +95,7 @@ gulp.task('statics', function() {
 
 // 压缩图标到dist，todo: 压缩插件还没配置
 gulp.task('build-img', function() {
-    return gulp.src(['static/assets/img/*'])
+    return gulp.src(['static/assets/img/*', 'static/assets/img/logo/*'])
         .pipe(gulp.dest('dist/assets/img/'))
 });
 
