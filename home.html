@@ -75,7 +75,6 @@
             </div>
 
             <div class="text-center pageTopText">
-                <h1>__(index.topTitle)__</h1>
                 <p>__(index.topContent)__</p>
             </div>
         </div>
@@ -400,14 +399,14 @@
 
     <!-- build:js -->
     <script src="assets/js/main.js "></script>
-    <script src="assets/js/page/home.js "></script>
+    <script src="assets/js/home.js "></script>
     <script src="assets/js/jquery.tmpl.js "></script>
 
     <script type="text/javascript">
         function loadList() {
             $.ajax({
                 dataType: "json",
-                url: "http://cmf.growlib.cn:8011/api/portal/lists/recommended?field=id,post_excerpt,post_title,published_time,more",
+                url: "http://cmf.growlib.cn:8011/api/portal/lists/getDefaultCategoryPostLists?field=post.id,post_excerpt,post_title,published_time,more",
                 success: function(r) {
                     $("#articleTemplate").tmpl({
                         list: r.data.list,
