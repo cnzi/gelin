@@ -1,0 +1,15 @@
+{
+    "title": "大赛排行榜",
+    "update": "最后更新时间：",
+    "junior": "1-2年级",
+    "middle": "3-4年级",
+    "seniorGrade": "5-6年级",
+    "juniorHigh": "7-8年级",
+    "order": "名次",
+    "name": "用户名称",
+    "best": "赛车最好成绩",
+    "carOrder": "赛车排名",
+    "carPoints": "赛车积分",
+    "qaPoints": "问答积分",
+    "totalPoints": "总积分"
+}

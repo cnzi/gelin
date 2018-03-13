@@ -77,6 +77,10 @@
     padding: 0;
     .GroupText {
         line-height: 40px;
+        white-space: nowrap;
+        p {
+            margin-bottom: 0;
+        }
     }
     div {
         img {

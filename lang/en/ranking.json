@@ -1,0 +1,15 @@
+{
+    "title": "RANKING",
+    "update": "Last updated:",
+    "junior": "Year 1-2",
+    "middle": "Year 3-4",
+    "seniorGrade": "Year 5-6",
+    "juniorHigh": "Year 7-8",
+    "order": "RANK",
+    "name": "User Name",
+    "best": "Best Racing Record",
+    "carOrder": "Ranking",
+    "carPoints": "Racing Scores",
+    "qaPoints": "Q&A Scores",
+    "totalPoints": "Total Scores"
+}
