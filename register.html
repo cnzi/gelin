@@ -49,16 +49,16 @@
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.verificationCode)__</label>
-                        <input type="text" class="form-control col-8 col-sm-7" name="mcode" placeholder="输入验证码">
+                        <input type="text" class="form-control col-8 col-sm-7" name="mcode" required placeholder="输入验证码">
                         <button class="btn btn-primary col-4 col-sm-3">__(register.getCode)__</button>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.password)__</label>
-                        <input type="password" class="form-control col-12 col-sm-10" name="password" placeholder="输入密码">
+                        <input type="password" class="form-control col-12 col-sm-10" name="password" required placeholder="输入密码">
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.passwordAgain)__</label>
-                        <input type="password" class="form-control col-12 col-sm-10" name="password2" placeholder="输入密码">
+                        <input type="password" class="form-control col-12 col-sm-10" name="password2" required placeholder="输入密码">
                     </div>
                 </div>
             </div>
@@ -67,25 +67,25 @@
                     <div class="form-title">__(register.regInfo)__</div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.name)__</label>
-                        <input name="real_name" type="text" class="form-control col-8 col-sm-10" aria-describedby="emailHelp" placeholder="输入姓名">
+                        <input name="real_name" required type="text" class="form-control col-8 col-sm-10" aria-describedby="emailHelp" placeholder="输入姓名">
                     </div>
                     <div class="form-group row">
                         <label for="gender" class="col-4 col-sm-2">__(register.sex)__</label>
-                        <select name="sex" class="form-control col-8 col-sm-10">
+                        <select name="sex" required class="form-control col-8 col-sm-10">
                             <option selected>__(register.male)__</option>
                             <option>__(register.female)__</option>
                         </select>
                     </div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.address)__</label>
-                        <select id="country-list" name="province_id" class="form-control col-4 col-sm-5">
+                        <select id="country-list" required name="province_id" class="form-control col-4 col-sm-5">
                         </select>
-                        <select id="city-list" name="city_id" class="form-control col-4 col-sm-5">
+                        <select id="city-list" required name="city_id" class="form-control col-4 col-sm-5">
                         </select>
                     </div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.yearLevel)__</label>
-                        <select name="group" class="form-control col-8 col-sm-10">
+                        <select name="group" required class="form-control col-8 col-sm-10">
                             <option value="1" selected>1-2年级</option>
                             <option value="2">3-4年级</option>
                             <option value="3">5-6年级</option>
@@ -99,7 +99,7 @@
             </div>
             <div class="form-group">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="terms" value="" required>
+                    <input type="checkbox" class="form-check-input" id="terms" required>
                     <label class="read form-check-label" for="terms">你已经阅读并接受
                         <span class="terms">《大赛协议》</span>
                     </label>
@@ -156,6 +156,7 @@
                 dataType: "json",
                 url: "http://60.205.107.191:9911/area/getSubList_json?id="+id,
                 success: function(r) {
+                    $(target).html('')
                     $("#countryTpl").tmpl({
                         list: r.data.list,
                     }).appendTo( target || "#country-list");
@@ -210,6 +211,7 @@
                 });
                 loadList();
                 loadCountry(0, '#country-list');
+                loadCountry(1000001, '#city-list');
                 $('#country-list').on('change', function(e) {
                     loadCountry(e.target.value, '#city-list');
                 });
