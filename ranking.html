@@ -30,45 +30,21 @@
                     <div class="my-tabs" id="myTab" role="tablist">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#1-2" role="tab" data-toggle="tab">__(ranking.junior)__</a>
+                                <a class="nav-link active" href="#1-2" role="tab" data-value="1" data-toggle="tab">__(ranking.junior)__</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#3-4" role="tab" data-toggle="tab">__(ranking.middle)__</a>
+                                <a class="nav-link" href="#3-4" role="tab" data-value="2" data-toggle="tab">__(ranking.middle)__</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#5-6" role="tab" data-toggle="tab">__(ranking.seniorGrade)__</a>
+                                <a class="nav-link" href="#5-6" role="tab" data-value="3" data-toggle="tab">__(ranking.seniorGrade)__</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#7-9" role="tab" data-toggle="tab">__(ranking.juniorHigh)__</a>
+                                <a class="nav-link" href="#7-9" role="tab" data-value="4" data-toggle="tab">__(ranking.juniorHigh)__</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="1-2" role="tabpanel">
-                                <div class="my-pane">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>__(ranking.order)__</th>
-                                                <th>__(ranking.name)__</th>
-                                                <th>__(ranking.best)__</th>
-                                                <th>__(ranking.carOrder)__</th>
-                                                <th>__(ranking.carPoints)__</th>
-                                                <th>__(ranking.qaPoints)__</th>
-                                                <th>__(ranking.totalPoints)__</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tanmay</td>
-                                                <td>Bangalore</td>
-                                                <td>560001</td>
-                                                <td>Tanmay</td>
-                                                <td>Bangalore</td>
-                                                <td>560001</td>
-                                                <td>560001</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="my-pane" id="rank-list1">
                                     <nav aria-label="Page navigation">
                                         <ul class="pagination">
                                             <li class="page-item">
@@ -96,55 +72,91 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="3-4" role="tabpanel">
-                                <div class="my-pane">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>名次</th>
-                                                <th>昵称</th>
-                                                <th>编程赛车最好成绩</th>
-                                                <th>编程赛车排名</th>
-                                                <th>编程赛车积分</th>
-                                                <th>问答积分</th>
-                                                <th>总积分</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                            <div class="tab-pane fade active" id="3-4" role="tabpanel">
+                                <div class="my-pane" id="rank-list2">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="5-6" role="tabpanel">
-                                <div class="my-pane">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>名次</th>
-                                                <th>昵称</th>
-                                                <th>编程赛车最好成绩</th>
-                                                <th>编程赛车排名</th>
-                                                <th>编程赛车积分</th>
-                                                <th>问答积分</th>
-                                                <th>总积分</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                            <div class="tab-pane fade active" id="5-6" role="tabpanel">
+                                <div class="my-pane" id="rank-list3">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="7-9" role="tabpanel">
-                                <div class="my-pane">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>名次</th>
-                                                <th>昵称</th>
-                                                <th>编程赛车最好成绩</th>
-                                                <th>编程赛车排名</th>
-                                                <th>编程赛车积分</th>
-                                                <th>问答积分</th>
-                                                <th>总积分</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                            <div class="tab-pane fade active" id="7-8" role="tabpanel">
+                                <div class="my-pane" id="rank-list4">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
@@ -156,9 +168,53 @@
         <p>__(common.footer)__</p>
     </footer>
     <script src="assets/js/main.js "></script>
+    <script src="/assets/js/jquery.tmpl.js "></script>
+    <script id="tableTpl" type="text/x-jquery-tmpl">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>__(ranking.order)__</th>
+                    <th>__(ranking.name)__</th>
+                    <th>__(ranking.best)__</th>
+                    <th>__(ranking.carOrder)__</th>
+                    <th>__(ranking.carPoints)__</th>
+                    <th>__(ranking.qaPoints)__</th>
+                    <th>__(ranking.totalPoints)__</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {{each(i, item) list}}
+                    <td>${item.real_name}</td>
+                    <td>Bangalore</td>
+                    <td>560001</td>
+                    <td>Tanmay</td>
+                    <td>Bangalore</td>
+                    <td>560001</td>
+                    <td>560001</td>
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
+    </script>
     <script>
         $(function() {
-            $('#myTab li:first-child a').tab('show')
+            // $('#myTab .nav li:first-child a').tab('show');
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                debugger
+                var id = e.target.getAttribute('data-value');
+                $.ajax({
+                    dataType: "json",
+                    url: "http://60.205.107.191:9911/game/rank/index_json?group="+id,
+                    success: function(r) {
+                        $("#tableTpl").tmpl({
+                            list: r.data.list,
+                        }).appendTo( "#rank-list" + id);
+                    }
+                });
+                $(this).tab('show')
+            })
         });
     </script>
 </body>
