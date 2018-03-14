@@ -137,7 +137,7 @@ body {
     }
     p {
         font-size: 1.5rem;
-        color: #8a8d90;
+        color: #6a6a6a;
         text-align: justify;
     }
 }
@@ -314,6 +314,7 @@ body {
     border: #5fcc5f;
 }
 
+
 .pageDownloadBtn {
     width: 100%;
     margin: 0 0 1rem 0px;
@@ -420,7 +421,9 @@ body {
         color: #ababab;
     }
 }
-
+a {
+    text-decoration: none;
+}
 .pageInformationItem {
     max-height: 200px;
     margin-bottom: 50px;
@@ -432,6 +435,7 @@ body {
         line-height: 2rem;
         height: 4rem;
         overflow: hidden;
+        color: #353535;
     }
     .content {
         line-height: 1.2rem;

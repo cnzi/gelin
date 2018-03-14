@@ -4,7 +4,7 @@ body {
 }
 
 html {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 @media(min-width: 540px) {
@@ -23,6 +23,10 @@ html {
 @media(max-width: 540px) {
     html {
         font-size: 10px;
+        .gelin-nav .navbar-nav .nav-item .nav-link {
+            color: #999;
+            line-height: 18px;
+        }
     }
 }
 
@@ -39,26 +43,9 @@ html {
         .navbar-collapse {
             background-color: rgba(34, 34, 34, 0.8)!important;
         }
-        .home .nav-item:first-child .nav-link{
-            color: #fff!important;
-        }
-        .rule .nav-item:nth-child(2) .nav-link{
-            color: #fff!important;
-        }
-        .about .nav-item:nth-child(3) .nav-link{
-            color: #fff!important;
-        }
-        .rank .nav-item:nth-child(4) .nav-link{
-            color: #fff!important;
-        }
-        .news .nav-item:nth-child(5) .nav-link{
-            color: #fff!important;
-        }
-        .download .nav-item:nth-child(6) .nav-link{
-            color: #fff!important;
-        }
         .navbar-nav .nav-item .nav-link {
-            color: #888;
+            color: #303030;
+            line-height: 18px;
         }
         .logo {
             height: 3rem;
@@ -73,6 +60,24 @@ html {
 .gelin-nav {
     padding: 0.5rem 1rem;
     background: rgba(34, 34, 34, 0.8);
+    .home .nav-item:first-child .nav-link{
+        color: #fff!important;
+    }
+    .rule .nav-item:nth-child(2) .nav-link{
+        color: #fff!important;
+    }
+    .about .nav-item:nth-child(3) .nav-link{
+        color: #fff!important;
+    }
+    .rank .nav-item:nth-child(4) .nav-link{
+        color: #fff!important;
+    }
+    .news .nav-item:nth-child(5) .nav-link{
+        color: #fff!important;
+    }
+    .download .nav-item:nth-child(6) .nav-link{
+        color: #fff!important;
+    }
     .navbar-collapse {
         background-color: #f8b62b;
         margin: 0 -15px;
@@ -82,13 +87,15 @@ html {
     }
     .navbar-nav {
         // padding: 1rem 2rem 1rem 3rem;
+        display: flex;
+        align-items: center;
         .nav-link {
-            font-size: 1.3rem;
+            font-size: 1rem;
             &:hover {
-                color: white;
+                color: #ffcc00;
             }
             cursor: pointer;
-            color: rgba(0, 0, 0, 0.5);
+            color: #303030;
         }
     }
     .logo {

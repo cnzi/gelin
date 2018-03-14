@@ -8,10 +8,10 @@
     padding: 0 10px;
     .circle {
         display: inline-block;
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
-        border: 1px solid #d1d1d1;
+        border: 2px solid #d1d1d1;
         background-color: #fff;
     }
     .header {
@@ -21,7 +21,7 @@
         .title {
             margin-left: 20px;
             color: #c47236;
-            font-size: 42px;
+            font-size: 2.5rem;
         }
     }
     .content {
@@ -117,19 +117,23 @@
         }
         .consult {
             height: 100%;
-            padding: 0 10px;
+            padding: 0 20px;
         }
         .consult1 {
             background-color: #dfc081;
+            color: #a67332;
         }
         .consult2 {
             background-color: #e4b166;
+            color: #a06a29;
         }
         .consult3 {
             background-color: #ce8d3e;
+            color: #ebd1b2;
         }
         .consult4 {
             background-color: #a06a29;
+            color: #dfc081;
         }
     }
     .content3 {
@@ -156,10 +160,12 @@
     }
     .title2 {
         background-color: #f8b62b;
+        margin-top: 94px;
         height: 130px;
         text-align: center;
         line-height: 130px;
-        font-size: 36px;
+        font-size: 30px;
+        color: #222;
     }
 }
 .slide {
