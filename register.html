@@ -78,13 +78,9 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.address)__</label>
-                        <select name="province_id" class="form-control col-4 col-sm-5">
-                            <option selected>北京市</option>
-                            <option>上海市</option>
+                        <select id="country-list" name="province_id" class="form-control col-4 col-sm-5">
                         </select>
-                        <select name="city_id" class="form-control col-4 col-sm-5">
-                            <option selected>朝阳区</option>
-                            <option>海淀区</option>
+                        <select id="city-list" name="city_id" class="form-control col-4 col-sm-5">
                         </select>
                     </div>
                     <div class="form-group row">
@@ -122,6 +118,11 @@
         <option value=${item.code}>${item.name}</option>
         {{/each}}
     </script>
+    <script id="countryTpl" type="text/x-jquery-tmpl">
+        {{each(i, item) list}}
+        <option value=${item.id}>${item.name}</option>
+        {{/each}}
+    </script>
     <script>
         function skipInput(e) {
             var inputs = $(".form-control"); //获取登录页面的input标签
@@ -147,6 +148,17 @@
                     $("#codeTpl").tmpl({
                         list: r.data.list,
                     }).appendTo("#phone-code");
+                }
+            });
+        }
+        function loadCountry(id, target) {
+            $.ajax({
+                dataType: "json",
+                url: "http://60.205.107.191:9911/area/getSubList_json?id="+id,
+                success: function(r) {
+                    $("#countryTpl").tmpl({
+                        list: r.data.list,
+                    }).appendTo( target || "#country-list");
                 }
             });
         }
@@ -197,6 +209,10 @@
                     }, false);
                 });
                 loadList();
+                loadCountry(0, '#country-list');
+                $('#country-list').on('change', function(e) {
+                    loadCountry(e.target.value, '#city-list');
+                });
             }, false);
         })();
     </script>
