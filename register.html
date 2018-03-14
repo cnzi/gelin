@@ -50,7 +50,7 @@
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.verificationCode)__</label>
                         <input type="text" class="form-control col-8 col-sm-7" name="mcode" required placeholder="输入验证码">
-                        <button id="mcodeBtn" type="button" class="btn btn-primary col-4 col-sm-3">__(register.getCode)__</button>
+                        <button id="mcodeBtn" data-loading-text="Loading..." type="button" class="btn btn-primary col-4 col-sm-3">__(register.getCode)__</button>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.password)__</label>
@@ -193,16 +193,34 @@
 
         });
         $('#mcodeBtn').click(function(e) {
-            $('#mcodeBtn').off('click')
+            var text = $(this).text();
+            var code = $('#phone-code').val();
+            var mobile = $('#phone').val();
+            if(!code) {
+                $('#phone-code').addClass('is-invalid')
+                return;
+            }
+            if(!mobile) {
+                $('#phone').addClass('is-invalid')
+                return;
+            }
+            $('#phone-code').removeClass('is-invalid');
+            $('#phone').removeClass('is-invalid')
+
+            var $btn = $(this).html('loading...').attr("disabled",true)
             $.ajax({
                 method: 'POST',
                 dataType: "json",
                 url: "http://60.205.107.191:9911/sms/send_json",
                 data: {
-                    area_code: $('#phone-code').val(),
-                    mobile: $('#phone').val()
+                    area_code:  code,
+                    mobile: mobile
                 },
                 success: function(r) {
+                    $btn.attr("disabled",false).html(text)
+                },
+                error: function(r) {
+                    $btn.attr("disabled",false).html(text)
                 }
             });
         });
