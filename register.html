@@ -78,23 +78,28 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.address)__</label>
-                        <select id="country-list" required name="country_id" class="form-control col-4 col-sm-3">
-                            </select>
-                        <select id="province-list" required name="province_id" class="form-control col-4 col-sm-3">
-                        </select>
-                        <select id="city-list" required name="city_id" class="form-control col-4 col-sm-3">
-                        </select>
+                        <div class="container col-8 col-sm-10">
+                            <div class="row">
+                                <select id="country-list" required name="country_id" class="form-control col-4 col-sm-4">
+                                    </select>
+                                <select id="province-list" required name="province_id" class="form-control col-4 col-sm-4">
+                                </select>
+                                <select id="city-list" required name="city_id" class="form-control col-4 col-sm-4">
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.yearLevel)__</label>
                         <select name="group" required class="form-control col-8 col-sm-10">
-                            <option value="1" selected>1-2年级</option>
-                            <option value="2">3-4年级</option>
-                            <option value="3">5-6年级</option>
+                            <option value="1" selected>__(ranking.junior)__</option>
+                            <option value="2">__(ranking.middle)__</option>
+                            <option value="3">__(ranking.seniorGrade)__</option>
+                            <option value="3">__(ranking.juniorHigh)__</option>
                         </select>
                     </div>
                     <div class="form-group row">
-                        <label for="school" class="col-4 col-sm-2">学校码</label>
+                        <label for="school" class="col-4 col-sm-2">__(register.schoolCode)__</label>
                         <input name="school_code" type="text" class="form-control col-8 col-sm-10" id="school" placeholder="输人学校码">
                     </div>
                 </div>
@@ -102,8 +107,8 @@
             <div class="form-group">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="terms" required>
-                    <label class="read form-check-label" for="terms">你已经阅读并接受
-                        <span class="terms">《大赛协议》</span>
+                    <label class="read form-check-label" for="terms">__(register.read)__
+                        <span class="terms"><a href="/portal/game/terms">__(register.terms)__</a> </span>
                     </label>
                 </div>
             </div>

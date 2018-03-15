@@ -246,27 +246,6 @@
     <!-- end pageDownload -->
 
     <!-- pageInformation -->
-    <script id="articleTemplate" type="text/x-jquery-tmpl">
-        {{each(i, item) list}}
-        <div class="col-md-6 col-12">
-            <a href="/portal/game/article?id=${item.id}" target="_blank">
-                <div class="container">
-                    <div class="row pageInformationItem">
-                        <div class="cover col-6">
-                            <img src="${item.more.thumbnail}" alt="">
-                        </div>
-                        <div class="text-left col-6">
-                            <h4 class="title">${item.post_title}</h4>
-                            <p class="content">${item.post_excerpt}</p>
-                            ${item.published_time}
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        {{/each}}
-    </script>
     <!-- end pageInformation -->
 
     <!-- pageInformation -->
@@ -404,7 +383,26 @@
     <script src="assets/js/main.js "></script>
     <script src="assets/js/home.js "></script>
     <script src="assets/js/jquery.tmpl.js "></script>
-
+    <script id="articleTemplate" type="text/x-jquery-tmpl">
+        {{each(i, item) list}}
+        <div class="col-md-6 col-12">
+            <a href="/portal/game/article?id=${item.id}" target="_blank">
+                <div class="container">
+                    <div class="row pageInformationItem">
+                        <div class="cover col-6">
+                            <img src="${item.more.thumbnail}" alt="">
+                        </div>
+                        <div class="text-left col-6">
+                            <h4 class="title">${item.post_title}</h4>
+                            <p class="content">${item.post_excerpt}</p>
+                            ${item.published_time.split(' ')[0]}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </script>
     <script type="text/javascript">
         function loadList() {
             $.ajax({

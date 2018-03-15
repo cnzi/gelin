@@ -124,7 +124,8 @@ body {
 }
 
 .pageTop {
-    margin-top: 3rem;
+    padding: 3rem 0;
+    background-color: #fafafa;
 }
 
 .pageTopText {
@@ -136,7 +137,8 @@ body {
         margin: 0 auto;
     }
     p {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        padding: 1rem 0;
         color: #6a6a6a;
         text-align: justify;
     }
@@ -409,6 +411,7 @@ body {
 }
 
 .pageInformation {
+    margin-bottom: 3rem;
     h1 {
         padding: 3rem 0 2rem 0;
     }
@@ -420,8 +423,13 @@ body {
         background: #f7f7f7;
         color: #ababab;
     }
+    .btn {
+        border-color: #ababab;
+        background-color: #f7f7f7;
+    }
 }
-a {
+a:link,
+a:hover {
     text-decoration: none;
 }
 .pageInformationItem {
@@ -436,10 +444,13 @@ a {
         height: 4rem;
         overflow: hidden;
         color: #353535;
+
     }
     .content {
-        line-height: 1.2rem;
-        height: 5.8rem;
+        line-height: 1.8rem;
+        margin-bottom: 3rem;
+        height: 3.6rem;
+        color: #797979;
         overflow: hidden;
     }
     div {
@@ -455,6 +466,7 @@ a {
 
 .pagePartner {
     padding-bottom: 2rem;
+    background-color: #fafafa;
     .logo-list {
         justify-content: center;
     }
