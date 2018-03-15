@@ -33,13 +33,13 @@
         </div>
     </div>
     <div class="register-form">
-        <form id="register" class="needs-validation container">
+        <form id="register" class="needs-validation container" action="#">
             <div class="block account row">
                 <div class="col-12 col-sm-12 col-lg-8 offset-lg-2">
                     <div class="form-title">__(register.idInfo)__</div>
                     <div class="form-group row">
                         <label for="account-name" class="col-12 col-sm-2">__(register.id)__</label>
-                        <input type="text" class="form-control col-12 col-sm-10" name="account" required placeholder="__(register.placeholder1)__">
+                        <input id="account" type="text" class="form-control col-12 col-sm-10" name="account" required placeholder="__(register.placeholder1)__">
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.phone)__</label>
@@ -49,16 +49,16 @@
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.verificationCode)__</label>
-                        <input type="text" class="form-control col-8 col-sm-7" name="mcode" required placeholder="输入验证码">
+                        <input type="text" class="form-control col-8 col-sm-7" name="mcode" id="mcode" required placeholder="输入验证码">
                         <button id="mcodeBtn" data-loading-text="Loading..." type="button" class="btn btn-primary col-4 col-sm-3">__(register.getCode)__</button>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.password)__</label>
-                        <input type="password" class="form-control col-12 col-sm-10" name="password" required placeholder="输入密码">
+                        <input type="password" id="password" class="form-control col-12 col-sm-10" name="password" required placeholder="输入密码">
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.passwordAgain)__</label>
-                        <input type="password" class="form-control col-12 col-sm-10" name="password2" required placeholder="输入密码">
+                        <input type="password" id="password2" class="form-control col-12 col-sm-10" name="password2" required placeholder="输入密码">
                     </div>
                 </div>
             </div>
@@ -72,15 +72,17 @@
                     <div class="form-group row">
                         <label for="gender" class="col-4 col-sm-2">__(register.sex)__</label>
                         <select name="sex" required class="form-control col-8 col-sm-10">
-                            <option selected>__(register.male)__</option>
-                            <option>__(register.female)__</option>
+                            <option value="1" selected>__(register.male)__</option>
+                            <option value="0">__(register.female)__</option>
                         </select>
                     </div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.address)__</label>
-                        <select id="country-list" required name="province_id" class="form-control col-4 col-sm-5">
+                        <select id="country-list" required name="country_id" class="form-control col-4 col-sm-3">
+                            </select>
+                        <select id="province-list" required name="province_id" class="form-control col-4 col-sm-3">
                         </select>
-                        <select id="city-list" required name="city_id" class="form-control col-4 col-sm-5">
+                        <select id="city-list" required name="city_id" class="form-control col-4 col-sm-3">
                         </select>
                     </div>
                     <div class="form-group row">
@@ -160,21 +162,45 @@
                     $(target).html('')
                     $("#countryTpl").tmpl({
                         list: r.data.list,
-                    }).appendTo( target || "#country-list");
+                    }).appendTo( target || "#province-list");
                 }
             });
         }
         $('#submit').click(function(e) {
+            $('#password').removeClass('is-invalid');
+            if(!$('#password').val()) {
+                document.getElementById('account').scrollIntoView();
+                $('#password').addClass('is-invalid');
+                return
+            }
+            $('#password2').removeClass('is-invalid');
+            if($('#password2').val() != $('#password').val()) {
+                $('#password2').addClass('is-invalid');
+                document.getElementById('account').scrollIntoView();
+                return;
+            }
+            if(!$('#mcode').val()) {
+                document.getElementById('mcode').scrollIntoView();
+                return;
+            }
             var query = $('#register').serialize();
             var data = {};
             var qs = query.split('&');
+            var flag = false;
             for (var i = 0; i < qs.length; i++) {
                 var item = qs[i].split('=');
-                if (!item[1]) {
-                    return;
+                if (!item[1] && item[0] =='school_code') {
+                    continue;
+                } else if(!item[1]) {
+                    flag = true;
                 }
                 data[item[0]] = item[1];
             }
+            if(flag) {
+                document.getElementById('account').scrollIntoView();
+                return;
+            }
+            $('#mcode').removeClass('is-invalid');
             $.ajax({
                 type: "POST", //方法类型
                 dataType: 'json',
@@ -183,20 +209,26 @@
                 success: function(res) {
                     debugger
                     if(res.s === 808) {
-                        $('#phone-code').scrollIntoView();
-                        return;
-                    }
-                    if (res.s == 200) {
-                        alert("报名成功");
+                        document.getElementById('phone').scrollIntoView();
+                        $('#mcode').addClass('is-invalid');
+                    } else if(res.s === 400) {
+                        alert('params lost');
+                    } else if (res.s == 200) {
                         location.href = '/portal/game/complete';
+                    } else if(res.s === 807) {
+                        alert('Account has registered');
+                    } else {
+                        alert('Something error happened');
                     }
                 },
                 error: function(e) {
                     alert("报名异常");
                 }
             });
+            e.preventDefault();
 
         });
+
         $('#mcodeBtn').click(function(e) {
             var text = $(this).text();
             var code = $('#phone-code').val();
@@ -212,7 +244,7 @@
             $('#phone-code').removeClass('is-invalid');
             $('#phone').removeClass('is-invalid')
 
-            var $btn = $(this).html('sended').attr("disabled",true)
+            var $btn = $(this).html('sending').attr("disabled",true)
             $.ajax({
                 method: 'POST',
                 dataType: "json",
@@ -248,9 +280,13 @@
                 });
                 loadList();
                 loadCountry(0, '#country-list');
-                loadCountry(1000001, '#city-list');
-                $('#country-list').on('change', function(e) {
+                loadCountry(1000001, '#province-list');
+                loadCountry(2, '#city-list');
+                $('#province-list').on('change', function(e) {
                     loadCountry(e.target.value, '#city-list');
+                });
+                $('#country-list').on('change', function(e) {
+                    loadCountry(e.target.value, '#province-list');
                 });
             }, false);
         })();
