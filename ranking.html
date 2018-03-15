@@ -206,7 +206,7 @@
                 var id = e.target.getAttribute('data-value');
                 $.ajax({
                     dataType: "json",
-                    url: "http://60.205.107.191:9911/game/rank/index_json?group="+id,
+                    url: "http://itecon.org/game/rank/index_json?group="+id,
                     success: function(r) {
                         $("#tableTpl").tmpl({
                             list: r.data.list,

@@ -48,7 +48,7 @@
         function showArticle() {
             $.ajax({
                 dataType: "json",
-                url: "http://cmf.growlib.cn:8011/api/portal/articles/" + (getUrlParam('id') || 1),
+                url: "http://itecon.org/api/portal/articles/" + (getUrlParam('id') || 1),
                 success: function(r) {
                     /* $("#articleList").empty(); // Remove current set of movie template items*/
 

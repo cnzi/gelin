@@ -55,7 +55,7 @@
         function loadList() {
             $.ajax({
                 dataType: "json",
-                url: "http://cmf.growlib.cn:8011/api/portal/lists/getDefaultCategoryPostLists?field=post.id,post_excerpt,post_title,published_time,more&limit=6",
+                url: "http://itecon.org/api/portal/lists/getDefaultCategoryPostLists?field=post.id,post_excerpt,post_title,published_time,more&limit=6",
                 success: function(r) {
                     $("#articleTemplate").tmpl({
                         list: r.data.list,

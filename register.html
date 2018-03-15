@@ -112,7 +112,7 @@
                     </label>
                 </div>
             </div>
-            <button id="submit" type="button" class="btn btn-primary btn-sm col-4">__(register.complete)__</button>
+            <button id="submit" type="button" class="btn btn-primary btn-lg col-4">__(register.complete)__</button>
         </form>
     </div>
     <footer class="pagefooter">
@@ -151,7 +151,7 @@
         function loadList() {
             $.ajax({
                 dataType: "json",
-                url: "http://60.205.107.191:9911/area/getPhoneAreaCode_json",
+                url: "http://itecon.org/area/getPhoneAreaCode_json",
                 success: function(r) {
                     $("#codeTpl").tmpl({
                         list: r.data.list,
@@ -162,7 +162,7 @@
         function loadCountry(id, target) {
             $.ajax({
                 dataType: "json",
-                url: "http://60.205.107.191:9911/area/getSubList_json?id="+id,
+                url: "http://itecon.org/area/getSubList_json?id="+id,
                 success: function(r) {
                     $(target).html('')
                     $("#countryTpl").tmpl({
@@ -187,6 +187,18 @@
             validate('real-name');
             validate('phone-code');
 
+            var password = $('#password').val();
+            $('#password').removeClass('is-invalid');
+            if(password.length < 6) {
+                $('#password').addClass('is-invalid');
+                document.getElementById('password').scrollIntoView()
+                return;
+            }
+            var terms = $('#terms');
+            if(!terms.is(':checked')) {
+                $('#terms').addClass('is-invalid');
+                return;
+            }
             var query = $('#register').serialize();
             var data = {};
             var qs = query.split('&');
@@ -208,7 +220,7 @@
             $.ajax({
                 type: "POST", //方法类型
                 dataType: 'json',
-                url: "http://60.205.107.191:9911/client/regitster/join_json", //url
+                url: "http://itecon.org/client/regitster/join_json", //url
                 data: data,
                 success: function(res) {
                     debugger
@@ -232,9 +244,18 @@
             e.preventDefault();
 
         });
-
+        var count = 60;
         $('#mcodeBtn').click(function(e) {
             var text = $(this).text();
+            var $btn = $(this)
+            var timer = setInterval(function() {
+                $btn.text(--count);
+                if(count == 0) {
+                    clearInterval(timer);
+                    count = 60;
+                    $btn.attr("disabled",false).html(text)
+                }
+            }, 1000)
             var code = $('#phone-code').val();
             var mobile = $('#phone').val();
             if(!code) {
@@ -248,20 +269,19 @@
             $('#phone-code').removeClass('is-invalid');
             $('#phone').removeClass('is-invalid')
 
-            var $btn = $(this).html('sending').attr("disabled",true)
+            $btn.attr("disabled",true)
             $.ajax({
                 method: 'POST',
                 dataType: "json",
-                url: "http://60.205.107.191:9911/sms/send_json",
+                url: "http://itecon.org/sms/send_json",
                 data: {
                     area_code:  code,
                     mobile: mobile
                 },
                 success: function(r) {
-                    $btn.attr("disabled",false).html(text)
                 },
                 error: function(r) {
-                    $btn.attr("disabled",false).html(text)
+                    // $btn.attr("disabled",false).html(text)
                 }
             });
         });
@@ -291,6 +311,7 @@
                 });
                 $('#country-list').on('change', function(e) {
                     loadCountry(e.target.value, '#province-list');
+                    $('#city-list').html('')
                 });
             }, false);
         })();
