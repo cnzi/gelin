@@ -1,11 +1,11 @@
 @import 'common';
 .pageNav {
-    width: 1200px;
+    min-width: 1200px;
 }
 .pagefooter {
     width: 1200px;
 }
-.content {
+.main-content {
     width: 1200px;
     overflow: hidden;
 }
