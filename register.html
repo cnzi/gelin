@@ -194,6 +194,11 @@
                 document.getElementById('password').scrollIntoView()
                 return;
             }
+            if($('#password').val() !== $('#password2').val()) {
+                $('#password2').addClass('is-invalid');
+                document.getElementById('password').scrollIntoView()
+                return;
+            }
             var terms = $('#terms');
             if(!terms.is(':checked')) {
                 $('#terms').addClass('is-invalid');
@@ -310,8 +315,9 @@
                     loadCountry(e.target.value, '#city-list');
                 });
                 $('#country-list').on('change', function(e) {
+                    $('#province-list').html('').val('')
                     loadCountry(e.target.value, '#province-list');
-                    $('#city-list').html('')
+                    $('#city-list').html('').val('')
                 });
             }, false);
         })();
