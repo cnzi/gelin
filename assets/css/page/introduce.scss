@@ -1,7 +1,13 @@
 @import 'common';
-
-.container {
+.pageNav {
     width: 1200px;
+}
+.pagefooter {
+    width: 1200px;
+}
+.content {
+    width: 1200px;
+    overflow: hidden;
 }
 .slide {
     margin-top: 50px;

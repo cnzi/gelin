@@ -33,17 +33,17 @@
         </div>
     </div>
     <div class="register-form">
-        <form id="register" class="needs-validation container" action="">
+        <form id="register" class="needs-validation container">
             <div class="block account row">
-                <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                <div class="col-12 col-sm-12 col-lg-8 offset-lg-2">
                     <div class="form-title">__(register.idInfo)__</div>
                     <div class="form-group row">
                         <label for="account-name" class="col-12 col-sm-2">__(register.id)__</label>
-                        <input type="text" class="form-control col-12 col-sm-10" name="account" required placeholder="输入账号名称">
+                        <input type="text" class="form-control col-12 col-sm-10" name="account" required placeholder="__(register.placeholder1)__">
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.phone)__</label>
-                        <select name="area_code" id="phone-code" class="form-control col-3 col-sm-2" style="margin-top: 5px;">
+                        <select name="area_code" id="phone-code" class="form-control col-3 col-sm-2">
                         </select>
                         <input name="mobile" type="phone" id="phone" class="form-control col-9 col-sm-8" required placeholder="输入手机号">
                     </div>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="block register row">
-                <div class="col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3">
+                <div class="col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
                     <div class="form-title">__(register.regInfo)__</div>
                     <div class="form-group row">
                         <label class="col-4 col-sm-2">__(register.name)__</label>
@@ -105,7 +105,7 @@
                     </label>
                 </div>
             </div>
-            <button id="submit" type="submit" class="btn btn-primary col-4">__(register.complete)__</button>
+            <button id="submit" type="button" class="btn btn-primary col-4">__(register.complete)__</button>
         </form>
     </div>
     <footer class="pagefooter">
@@ -170,23 +170,26 @@
             for (var i = 0; i < qs.length; i++) {
                 var item = qs[i].split('=');
                 if (!item[1]) {
-                    return;
+                    break;
                 }
                 data[item[0]] = item[1];
             }
             $.ajax({
                 type: "POST", //方法类型
-                dataType: "json", //预期服务器返回的数据类型
+                dataType: 'text json',
+                contentType: "application/json", //预期服务器返回的数据类型
                 url: "http://60.205.107.191:9911/client/regitster/join_json", //url
-                data: query,
+                data: data,
                 success: function(result) {
+                    debugger
                     console.log(result);
                     if (result.resultCode == 200) {
                         alert("报名成功");
                         location.href = '/portal/game/download';
                     }
                 },
-                error: function() {
+                error: function(e) {
+                    debugger
                     alert("报名异常");
                 }
             });
@@ -207,7 +210,7 @@
             $('#phone-code').removeClass('is-invalid');
             $('#phone').removeClass('is-invalid')
 
-            var $btn = $(this).html('loading...').attr("disabled",true)
+            var $btn = $(this).html('sended').attr("disabled",true)
             $.ajax({
                 method: 'POST',
                 dataType: "json",

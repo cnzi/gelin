@@ -1,4 +1,8 @@
 @import './common';
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
 .register-form {
     text-align: center;
     padding-bottom: 50px;
