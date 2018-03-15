@@ -151,7 +151,7 @@
         function loadList() {
             $.ajax({
                 dataType: "json",
-                url: "http://itecon.org/area/getPhoneAreaCode_json",
+                url: "http://world-api.growlib.com/area/getPhoneAreaCode_json",
                 success: function(r) {
                     $("#codeTpl").tmpl({
                         list: r.data.list,
@@ -162,7 +162,7 @@
         function loadCountry(id, target) {
             $.ajax({
                 dataType: "json",
-                url: "http://itecon.org/area/getSubList_json?id="+id,
+                url: "http://world-api.growlib.com/area/getSubList_json?id="+id,
                 success: function(r) {
                     $(target).html('')
                     $("#countryTpl").tmpl({
@@ -220,7 +220,7 @@
             $.ajax({
                 type: "POST", //方法类型
                 dataType: 'json',
-                url: "http://itecon.org/client/regitster/join_json", //url
+                url: "http://world-api.growlib.com/client/regitster/join_json", //url
                 data: data,
                 success: function(res) {
                     debugger
@@ -273,7 +273,7 @@
             $.ajax({
                 method: 'POST',
                 dataType: "json",
-                url: "http://itecon.org/sms/send_json",
+                url: "http://world-api.growlib.com/sms/send_json",
                 data: {
                     area_code:  code,
                     mobile: mobile
