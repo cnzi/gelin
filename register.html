@@ -26,10 +26,10 @@
         </div>
     </div>
     <div class="container main">
-        <h1>__(register.title)__</h1>
+        <h1 class="title1">__(register.title)__</h1>
         <div class="topbar row">
-            <div class="step step1 col-6">1. __(register.step1)__</div>
-            <div class="step col-6">2. __(register.step2)__</div>
+            <div class="step step1 col-6">__(register.step1)__</div>
+            <div class="step col-6"></div>
         </div>
     </div>
     <div class="register-form">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.phone)__</label>
-                        <select name="area_code" id="phone-code" class="form-control col-3 col-sm-2">
+                        <select name="area_code" id="phone-code" class="phone-code form-control col-3 col-sm-2">
                         </select>
                         <input name="mobile" type="phone" id="phone" class="form-control col-9 col-sm-8" required placeholder="输入手机号">
                     </div>
@@ -105,7 +105,7 @@
                     </label>
                 </div>
             </div>
-            <button id="submit" type="button" class="btn btn-primary col-4">__(register.complete)__</button>
+            <button id="submit" type="button" class="btn btn-primary btn-sm col-4">__(register.complete)__</button>
         </form>
     </div>
     <footer class="pagefooter">
@@ -171,26 +171,27 @@
             for (var i = 0; i < qs.length; i++) {
                 var item = qs[i].split('=');
                 if (!item[1]) {
-                    break;
+                    return;
                 }
                 data[item[0]] = item[1];
             }
             $.ajax({
                 type: "POST", //方法类型
-                dataType: 'text json',
-                contentType: "application/json", //预期服务器返回的数据类型
+                dataType: 'json',
                 url: "http://60.205.107.191:9911/client/regitster/join_json", //url
                 data: data,
-                success: function(result) {
+                success: function(res) {
                     debugger
-                    console.log(result);
-                    if (result.resultCode == 200) {
+                    if(res.s === 808) {
+                        $('#phone-code').scrollIntoView();
+                        return;
+                    }
+                    if (res.s == 200) {
                         alert("报名成功");
-                        location.href = '/portal/game/download';
+                        location.href = '/portal/game/complete';
                     }
                 },
                 error: function(e) {
-                    debugger
                     alert("报名异常");
                 }
             });
