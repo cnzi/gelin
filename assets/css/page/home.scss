@@ -23,11 +23,23 @@ html {
         width: 48%;
         margin: 1%;
     }
-    .competitionList {
-        display: none;
-    }
 }
 
+@media(max-width: 960px) {
+    .pageDownloadList .pageDownloadPicText {
+        .container {
+            .row {
+                div {
+                    img {
+                        width: auto;
+                        height: 60px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
 body {
     font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
     color: black;
@@ -383,7 +395,7 @@ body {
 
 @media (min-width: 540px) {
     .pageDownloadPic {
-        display: none;
+        // display: none;
     }
 }
 
@@ -395,7 +407,7 @@ body {
 
 @media (max-width: 540px) {
     .pageDownloadPic {
-        display: none;
+        // display: none;
     }
     .pageDownloadItem.col-4 {
         padding: 0 0.5rem;
@@ -426,9 +438,14 @@ body {
         background: #f7f7f7;
         color: #ababab;
     }
-    .btn {
+    .more {
         border-color: #ababab;
         background-color: #f7f7f7;
+        padding: 10px 70px;
+        line-height: 30px;
+        &:hover {
+            color: #999;
+        }
     }
 }
 
