@@ -5,31 +5,51 @@
        margin: 0;
     }
 }
+
+
+
+@media(max-width: 540px) {
+    body .pageList {
+        .pageListItem {
+            .row {
+                .title {
+                    font-size: 1.4rem;
+                }
+                p {
+                    height: 2rem;
+
+                }
+            }
+        }
+    }
+}
+
 .pageList {
     text-align: center;
     margin-top: 2rem;
     .pageListItem {
         margin-top: 1rem;
-        .title {
-
-        }
         .row {
-            font-size: 1.3rem;
             .title {
                 font-size: 2rem;
-                line-height: 2.4rem;
+                line-height: 1.14;
                 width: 100%;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                color: #353535;
             }
             p {
-                color: #6a6a6a;
-                font-size: 1.2rem;
-                line-height: 2rem;
+                color: #797979;
+                font-size: 1.1rem;
+                line-height: 1.8;
                 height: 8.6rem;
                 margin-top: 1rem;
                 margin-bottom: 0;
                 overflow: hidden;
+            }
+            .time {
+                font-size: 1.3rem;
+                color: #2f210b;
             }
             .cover {
                 background-size: contain;

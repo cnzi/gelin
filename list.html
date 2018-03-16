@@ -38,13 +38,13 @@
             <a href="/portal/game/article?id=${item.id}">
                 <div class="container pageListItem">
                     <div class="row">
-                        <div class="text-right cover col-4 ">
+                        <div class="text-right cover col-5 col-sm-4 ">
                             <img src="${item.more.thumbnail}" alt="">
                         </div>
-                        <div class="text-left col-8 pageListItemRight">
+                        <div class="text-left col-7 col-sm-8 pageListItemRight">
                             <h2 class="title">${item.post_title}</h2>
                             <p>${item.post_excerpt}</p>
-                            <div>${item.published_time}</div>
+                            <div class="time">${item.published_time.split(' ')[0]}</div>
                         </div>
                     </div>
                 </div>

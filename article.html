@@ -26,6 +26,7 @@
     <div class="article" id="articleList">
         <script id="articleTemplate" type="text/x-jquery-tmpl">
             <h1 class="article-title">{{html title}}</h1>
+            <h2 class="article-time">${time}</h2>
             <div class="article-body">
                 {{html content}}
             </div>
@@ -54,7 +55,8 @@
 
                     $("#articleTemplate").tmpl({
                         title: r.data.post_title,
-                        content: r.data.post_content
+                        content: r.data.post_content,
+                        time: r.data.published_time.split(' ')[0]
                     }).appendTo("#articleList");
 
                 }

@@ -7,6 +7,11 @@ html {
     font-size: 12px;
 }
 
+a:link,
+a:hover {
+    text-decoration: none;
+}
+
 @media(min-width: 540px) {
     html {
         font-size: 12px;
@@ -98,7 +103,7 @@ html {
         .nav-link {
             font-size: 1rem;
             &:hover {
-                color: #ffcc00;
+                color: #fff;
             }
             cursor: pointer;
             color: #303030;
