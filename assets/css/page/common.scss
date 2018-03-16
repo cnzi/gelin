@@ -28,6 +28,12 @@ html {
             line-height: 18px;
         }
     }
+    .nav-item:nth-child(2) {
+        display:none;
+    }
+    .nav-item:nth-child(3) {
+        display:none;
+    }
 }
 
 @media(max-width: 900px) {
