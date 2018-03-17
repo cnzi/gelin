@@ -239,7 +239,11 @@ body {
         }
     }
 }
-
+@media (max-width: 784px) {
+    .gelin-nav .navbar-collapse {
+        margin: 0 -25px!important;
+    }
+}
 @media (max-width: 768px) {
     .triangle {
         width: 3.5%!important;        
@@ -249,8 +253,9 @@ body {
     }
     .pageScheduleTex3{
         margin-left: -3.5%!important;
-    }
+    }  
 }
+
 
 .competitionList {
     margin: 0!important;

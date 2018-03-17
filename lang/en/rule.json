@@ -13,6 +13,10 @@
     "mode1Content2": "10 MCQ on science daily, timer starts 3 seconds after the question given, 10 seconds are given to select the correct answer. The higher the accuracy, the higher the score.",
 
     "headline4": "The second form of activity.",
+    "model1pic1":"model1pic1.png",
+    "model1pic2":"model1pic2.png",
+    "model2pic1":"model2pic1.png",
+    "model2pic2":"model2pic2.png",
     "mode2Title": "City Top Gear",
     "mode2Content1": "Programming Project includes three tasks: vehicle Exterior Design, Modification and Programming Racing.",
     "mode2Content2": "Participants control the movement and parameter changes of vehicles in urban scenes through a programming module. There will be two lanes: carriageway and overtaking lane. There will be NPC vehicles and traffic lights in the scene as obstacles. ",
