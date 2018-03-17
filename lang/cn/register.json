@@ -22,9 +22,11 @@
     "country": "国家",
     "yearLevel": "所在年级",
     "complete": "完成报名",
+    "placeholder": "请输入信息",
     "placeholder1": "请输入账号名称",
     "schoolCode": "学校码",
     "read": "你已经阅读并接受",
     "terms": "《比赛协议》",
-    "agreement": ""
+    "agreement": "",
+    "birthday": "生日"
 }

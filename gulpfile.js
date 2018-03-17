@@ -43,7 +43,7 @@ gulp.task("minifyScripts", ["concatScripts"], function () {
 });
 
 gulp.task('compileSass', function () {
-    return gulp.src(["assets/css/main.scss", "assets/css/page/*.scss"])
+    return gulp.src(["assets/css/*.css", "assets/css/main.scss", "assets/css/page/*.scss"])
         .pipe(maps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())

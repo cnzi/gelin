@@ -13,7 +13,7 @@
     "passwordAgain": "Password Again",
     "regInfo": "Registration Information",
     "name": "Name on Passport",
-    "sex": "Sex",
+    "sex": "Gender",
     "male": "Male",
     "female": "Female",
     "address": "Address",
@@ -26,5 +26,7 @@
     "schoolCode": "School Code",
     "read": "You have read and agreed",
     "terms": "Terms",
-    "agreement": "/portal/terms"
+    "agreement": "/portal/terms",
+    "placeholder": "Please input here",
+    "birthday": "birthday"
 }
