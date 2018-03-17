@@ -23,20 +23,54 @@ html {
         width: 48%;
         margin: 1%;
     }
+    .pageDownloadPicText {
+        .container {
+            margin-top: 1rem!important;
+        }
+        .download {
+            img {
+                display: none!important;
+            }
+        }
+        .downloadText {
+            display: none!important;
+        }
+    }
+
+    .pageDownloadItem2 {
+        padding: 0 1rem;
+    }
+    .pageDownloadList {
+        .pageDownloadPicText2 {
+            margin-top: 1rem;
+            .downloadText {
+                display: none;
+            }
+        }
+        .pageDownloadItem2 img {
+            padding-top: 0;
+            width: 100%!important;
+        }
+    }
 }
 
 @media(max-width: 960px) {
-    .pageDownloadList .pageDownloadPicText {
+    .pageDownloadPicText2 {
+        .downloadText {
+            display: none!important;
+        }
+    }
+    .pageDownloadPicText {
         .container {
-            .row {
-                div {
-                    img {
-                        width: auto;
-                        height: 60px;
-                        margin-bottom: 5px;
-                    }
-                }
+            margin-top: 1rem!important;
+        }
+        .download {
+            img {
+                display: none!important;
             }
+        }
+        .downloadText {
+            display: none!important;
         }
     }
 }
@@ -303,12 +337,28 @@ body {
     background-image: url("../img/bg.png");
 }
 
+.pageDownloadPicText2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    p {
+        font-size: 1.5rem;
+        height: 3.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    img {
+        padding: 1rem;
+    }
+}
 .pageDownloadPicText {
     display: flex;
     align-items: center;
     .container {
         margin-top: 25px;
-        .row {
+        .download {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -318,6 +368,13 @@ body {
                     height: 100%;
                 }
             }
+        }
+        .downloadText {
+            font-size: 1.5rem;
+            height: 3.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
@@ -340,15 +397,6 @@ body {
 
 .pageDownloadBtn:hover {
     color: black;
-}
-
-.pageDownloadPicText2 {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    p {
-        margin: 0 auto;
-    }
 }
 
 .pageDownloadList {
