@@ -19,6 +19,11 @@ html {
     .logo {
         height: 3rem;
     }
+    .btn-light {
+        width: 7rem;
+        margin: 0 auto;
+        display: block;
+    }
     .circle-list .circle {
         width: 48%;
         margin: 1%;
@@ -93,22 +98,27 @@ body {
     margin: 0 2rem 0 0;
 }
 
-.pageNav-bg {
-    height: 50rem;
-    width: 100%;
-    position: absolute;
-    background-position: center center;
-    background-size: cover;
+.pageNav{
+    .pageNav-bg {
+        height: 50rem;
+        width: 100%;
+        position: absolute;
+        background-position: center center;
+        background-size: cover;
+    }
+    #pageNavbg {
+        background-image: url("../img/nav1.png");
+    }
+    .pageNavContent {
+        height: 50rem;
+        overflow: hidden;
+    }
 }
 
-.pageNavContent {
-    height: 50rem;
-    overflow: hidden;
-}
 
-#pageNavbg {
-    background-image: url("../img/nav1.png");
-}
+
+
+
 
 .title-text {
     margin-top: 150px;
