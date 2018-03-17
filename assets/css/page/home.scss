@@ -443,7 +443,7 @@ body {
 
 @media (min-width: 540px) {
     .pageDownloadPic {
-        // display: none;
+        display: none;
     }
 }
 
@@ -455,7 +455,7 @@ body {
 
 @media (max-width: 540px) {
     .pageDownloadPic {
-        // display: none;
+        display: none;
     }
     .pageDownloadItem.col-4 {
         padding: 0 0.5rem;
@@ -533,14 +533,16 @@ a:hover {
     }
 }
 
+.partner {
+    background-color: #fafafa;
+}
 .pagePartner {
     padding-bottom: 2rem;
-    background-color: #fafafa;
     .logo-list {
         justify-content: center;
     }
     h1 {
-        padding: 3rem 0 0 0;
+        padding: 3rem 0 2rem 0;
     }
     .container {
         padding-top: 20px;
@@ -553,6 +555,7 @@ a:hover {
         display: inline-flex;
         flex-direction: row;
         align-items: center;
+        margin-bottom: 1rem;
         img {
             width: 100%;
             max-width: 232px;

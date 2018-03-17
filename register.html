@@ -176,6 +176,9 @@
                     $("#countryTpl").tmpl({
                         list: r.data.list,
                     }).appendTo( target || "#province-list");
+                    if(r.data.list.length != 0) {
+                        $(traget).disable();
+                    }
                 }
             });
         }
