@@ -1,0 +1,145 @@
+@import 'common';
+h1 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.slide {
+    margin-top: 50px;
+    padding: 0 10px;
+    .header {
+        margin-bottom: 1rem;
+        .title {
+            vertical-align: middle;
+            color: #333;
+            font-size: 2.5rem;
+            line-height: 63px;
+        }
+    }
+    .image {
+        width: 100%;
+    }
+    .content {
+        margin-top: 3rem;
+        color: #333;
+        font-size: 16px;
+    }
+    .content1 {
+        padding: 1rem;
+        .processLeft {
+            text-align: right;
+            .circle {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 2px solid #d1d1d1;
+                text-align: center;
+                line-height: 100px;
+            }
+        }
+        .processRight {
+            text-align: left;
+            margin: auto;
+            .content11 {
+                background-color: #f2f2f2;
+                display: inline-block;
+                padding: 1rem;
+                margin: 0;
+            }
+        }
+    }
+    .content2 {
+        margin-top: 50px;
+        font-size: 16px;
+        color: #404040;
+        text-align: center;
+        div img {
+            width: 100%;
+        }
+        .consult {
+            .name {
+                text-align: left;
+                margin: 10px 0;
+            }
+            p {
+                text-align: left;
+                font-size: 1rem;
+            }
+        }
+    }
+    .content5 {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+        .item {
+            text-align: center;
+        }
+        .item {
+            padding: 0;
+        }
+    }
+    .content3 {
+        margin-top: 50px;
+        color: #404040;
+        .item {
+            margin-top: 30px;
+            padding-left: 50px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                border-radius: 50%;
+                background-color: #ec7016;
+                float: left;
+                vertical-align: top;
+            }
+        }
+    }
+    .content4 {
+        margin-top: 1rem;
+        text-align: center;
+        .sub-title4 {
+            color: #ec7016;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .sub-content4 {
+            text-align: left;
+        }
+        img {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .icon {
+        .iconIMG {
+            width: 10.8rem;
+            height: 10.8rem;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .slide {
+        .content1 {
+            .processLeft {
+                .circle {
+                    width: 80px;
+                    height: 80px;
+                    line-height: 80px;
+                }
+            }
+        }
+    }
+}
