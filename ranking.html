@@ -45,118 +45,18 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="1-2" role="tabpanel">
                                 <div class="my-pane" id="rank-list1">
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade active" id="3-4" role="tabpanel">
+                            <div class="tab-pane fade" id="3-4" role="tabpanel">
                                 <div class="my-pane" id="rank-list2">
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade active" id="5-6" role="tabpanel">
+                            <div class="tab-pane fade" id="5-6" role="tabpanel">
                                 <div class="my-pane" id="rank-list3">
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade active" id="7-8" role="tabpanel">
+                            <div class="tab-pane fade" id="7-8" role="tabpanel">
                                 <div class="my-pane" id="rank-list4">
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
                             </div>
                         </div>
@@ -183,37 +83,89 @@
                 </tr>
             </thead>
             <tbody>
+                {{each(i, item) list}}
                 <tr>
-                    {{each(i, item) list}}
+                    <td>${item.total_order}</td>
                     <td>${item.real_name}</td>
-                    <td>Bangalore</td>
-                    <td>560001</td>
-                    <td>Tanmay</td>
-                    <td>Bangalore</td>
-                    <td>560001</td>
-                    <td>560001</td>
-                    {{/each}}
+                    <td>${item.car_result}</td>
+                    <td>${item.car_order}</td>
+                    <td>${item.code_score}</td>
+                    <td>${item.qa_score}</td>
+                    <td>${item.total_score}</td>
                 </tr>
+                {{/each}}
             </tbody>
         </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item">
+                    <div class="page-link previous" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </div>
+                </li>
+                {{each(i, item) pages}}
+                    <li class="page-item ${current == i+1? 'active' : ''}">
+                        <span class="page-link page">${i+1}</span>
+                    </li>
+                {{/each}}
+                <li class="page-item">
+                    <div class="page-link next" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </script>
     <script>
+        var currentPage = 1;
+        var tabId = 1;
+        var totalPage = 1;
+        function showData(id, page) {
+            $.ajax({
+                dataType: "json",
+                url: "http://world-api.growlib.com/game/rank/index_json?group="+ id + "&page="+page,
+                success: function(r) {
+                    totalPage = r.data.totalPage;
+                    $("#tableTpl").tmpl({
+                        list: r.data.list,
+                        pages: new Array(r.data.totalPage).fill(''),
+                        current: r.data.page
+                    }).appendTo( "#rank-list" + id);
+                }
+            });
+        }
         $(function() {
-            // $('#myTab .nav li:first-child a').tab('show');
+            $('#myTab .nav li:first-child a').tab('show');
+            showData(1, 1);
             $('#myTab a').click(function (e) {
                 e.preventDefault();
-                debugger
                 var id = e.target.getAttribute('data-value');
-                $.ajax({
-                    dataType: "json",
-                    url: "http://world-api.growlib.com/game/rank/index_json?group="+id,
-                    success: function(r) {
-                        $("#tableTpl").tmpl({
-                            list: r.data.list,
-                        }).appendTo( "#rank-list" + id);
-                    }
-                });
-                $(this).tab('show')
+                tabId = id;
+                showData(id, 1);
+                $(this).tab('show');
+            });
+            $('#myTabContent').delegate('.previous', 'click', function() {
+                if(currentPage <= 1) {
+                    return;
+                }
+                currentPage = --page;
+                showData(currentPage, tabId)
+            });
+            $('#myTabContent').delegate('.next', 'click', function() {
+                if(currentPage >= totalPage - 1) {
+                    return;
+                }
+                showData(++page, tabId)
+            });
+            $('#myTabContent').delegate('.page', 'click', function(e) {
+                var page = e.target.innerText;
+                if(page == currentPage) {
+                    return;
+                }
+                currentPage = +page;
+                showData(+page, tabId)
             })
         });
     </script>

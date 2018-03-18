@@ -13,7 +13,13 @@
     }
     .my-tabs {
         border: 1px solid #eee;
+        .nav-tabs .nav-item:first-child {
+            .nav-link {
+                border-left: none;
+            }
+        }
         .nav-link {
+            border-radius: 0;
             &.active {
                 background-color: #fff;
                 border-bottom-color: transparent;
