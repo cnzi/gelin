@@ -128,11 +128,12 @@
                 url: "http://world-api.growlib.com/game/rank/index_json?group="+ id + "&page="+page,
                 success: function(r) {
                     totalPage = r.data.totalPage;
-                    $("#tableTpl").tmpl({
+                    const tpl = $("#tableTpl").tmpl({
                         list: r.data.list,
                         pages: new Array(r.data.totalPage).fill(''),
                         current: r.data.page
-                    }).appendTo( "#rank-list" + id);
+                    });
+                    $( "#rank-list" + id).html(tpl);
                 }
             });
         }
