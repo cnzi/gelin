@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="assets/css/prettify.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/jtsage-datebox.min.css">
 
     <!-- endbuild -->
 </head>
@@ -46,9 +46,9 @@
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.phone)__</label>
-                        <select name="area_code" id="phone-code" class="phone-code form-control col-3 col-sm-2">
+                        <select name="area_code" id="phone-code" class="phone-code form-control col-5 col-sm-2">
                         </select>
-                        <input name="mobile" type="phone" id="phone" class="form-control col-9 col-sm-8" required placeholder="输入手机号">
+                        <input name="mobile" type="phone" id="phone" class="form-control col-7 col-sm-8" required placeholder="输入手机号">
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.verificationCode)__</label>
@@ -69,23 +69,23 @@
                 <div class="col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
                     <div class="form-title">__(register.regInfo)__</div>
                     <div class="form-group row">
-                        <label class="col-4 col-sm-2">__(register.name)__</label>
-                        <input name="real_name" id="real-name" required type="text" class="form-control col-8 col-sm-10" placeholder="输入姓名">
+                        <label class="col-12 col-sm-2">__(register.name)__</label>
+                        <input name="real_name" id="real-name" required type="text" class="form-control col-12 col-sm-10" placeholder="输入姓名">
                     </div>
                     <div class="form-group row">
                         <label for="gender" class="col-4 col-sm-2">__(register.sex)__</label>
-                        <select name="sex" required class="form-control col-8 col-sm-10">
+                        <select name="sex" required class="form-control col-12 col-sm-10">
                             <option value="1" selected>__(register.male)__</option>
                             <option value="0">__(register.female)__</option>
                         </select>
                     </div>
                     <div class="form-group row">
-                        <label class="col-4 col-sm-2">__(register.birthday)__</label>
-                        <input name="birthday" readonly id="birthday" data-date-format="yyyy/mm/dd" required type="text" class="form-control col-8 col-sm-10" placeholder="__(register.placeholder)__">
+                        <label class="col-12 col-sm-2">__(register.birthday)__</label>
+                        <input name="birthday" type="date" id="birthday" required type="text" class="form-control col-12 col-sm-10" placeholder="__(register.placeholder)__">
                     </div>
                     <div class="form-group row">
-                        <label class="col-4 col-sm-2">__(register.address)__</label>
-                        <div class="container col-8 col-sm-10">
+                        <label class="col-12 col-sm-2">__(register.address)__</label>
+                        <div class="container col-12 col-sm-10">
                             <div class="row">
                                 <select id="country-list" required name="country_id" class="form-control col-4 col-sm-4">
                                     </select>
@@ -97,8 +97,8 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-4 col-sm-2">__(register.yearLevel)__</label>
-                        <select name="group" required class="form-control col-8 col-sm-10">
+                        <label class="col-12 col-sm-2">__(register.yearLevel)__</label>
+                        <select name="group" required class="form-control col-12 col-sm-10">
                             <option value="1" selected>__(ranking.junior)__</option>
                             <option value="2">__(ranking.middle)__</option>
                             <option value="3">__(ranking.seniorGrade)__</option>
@@ -106,8 +106,8 @@
                         </select>
                     </div>
                     <div class="form-group row">
-                        <label for="school" class="col-4 col-sm-2">__(register.schoolCode)__</label>
-                        <input name="school_code" type="text" class="form-control col-8 col-sm-10" id="school" placeholder="输人学校码">
+                        <label for="school" class="col-12 col-sm-2">__(register.schoolCode)__</label>
+                        <input name="school_code" type="text" class="form-control col-12 col-sm-10" id="school" placeholder="输人学校码">
                     </div>
                 </div>
             </div>
@@ -127,7 +127,8 @@
     </footer>
     <script src="/assets/js/main.js "></script>
     <script src="/assets/js/jquery.tmpl.js "></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="/assets/js/jtsage-datebox.min.js"></script>
     <script id="codeTpl" type="text/x-jquery-tmpl">
         {{each(i, item) list}}
         <option value=${item.code}>${item.name}</option>
@@ -139,7 +140,6 @@
         {{/each}}
     </script>
     <script>
-        $('#birthday').datepicker();
         function skipInput(e) {
             var inputs = $(".form-control"); //获取登录页面的input标签
             if (e.keyCode == 13) {
@@ -168,6 +168,9 @@
             });
         }
         function loadCountry(id, target) {
+            $(target).attr('disabled', false);
+            $('#city-list').attr('disabled', false);
+
             $.ajax({
                 dataType: "json",
                 url: "http://world-api.growlib.com/area/getSubList_json?id="+id,
@@ -176,8 +179,11 @@
                     $("#countryTpl").tmpl({
                         list: r.data.list,
                     }).appendTo( target || "#province-list");
-                    if(r.data.list.length != 0) {
-                        $(traget).disable();
+                    if(r.data.list.length == 0) {
+                        $(target).attr('disabled', true);
+                        $('#city-list').attr('disabled', true);
+                    } else if(target === '#province-list') {
+                        loadCountry(r.data.list[0].id, '#city-list');
                     }
                 }
             });
@@ -189,6 +195,7 @@
                 $('#'+ele).addClass('is-invalid');
             }
         }
+        // $('#birthday').date('jtsage-datebox');
         $('#submit').click(function(e) {
             validate('account');
             validate('password');
@@ -197,7 +204,7 @@
             validate('phone-code');
             validate('real-name');
             validate('phone-code');
-
+            validate('birthday');
             var password = $('#password').val();
             $('#password').removeClass('is-invalid');
             if(password.length < 6) {
