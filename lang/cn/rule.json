@@ -3,6 +3,7 @@
     "title2": "科学与工程大会",
     "headline1": "评委专家组",
     "headline2": "活动分组",
+    "headline2-m": "比赛分组",
     "junior": "低年级组（1-2年级）",
     "middle": "中年级组（3-4年级）",
     "seniorGrade": "高年级组（5-6年级）",
@@ -10,20 +11,22 @@
     "groutNote": "以知识点、操作复杂程度和该年龄段的科学素养标准为设计不同组别的题目。",
 
     "headline3": "城市级活动内容一",
+    "headline3-m": "活动形式",
     "mode1Title": "头脑王者",
     "mode1Content1": "考查科技知识，与不同国家的同龄人在线PK，积分计入全球科学超神排行榜。",
     "mode1Content2": "每天10道科技知识选择题，题目出现3秒后开始计时，限定10秒答题时间。正确率越高，积分越高。",
 
     "headline4": "城市级活动内容二",
-    "model1pic1":"model1pic1CN.png",
-    "model1pic2":"model1pic2CN.png",
-    "model2pic1":"model2pic1CN.png",
-    "model2pic2":"model2pic2CN.png",
+    "model1pic1": "model1pic1CN.png",
+    "model1pic2": "model1pic2CN.png",
+    "model2pic1": "model2pic1CN.png",
+    "model2pic2": "model2pic2CN.png",
     "mode2Title": "城市竞速",
     "mode2Content1": "编程项目制任务，分为车辆外观设计、改装、编程竞速赛三个环节。",
     "mode2Content2": "参与者通过编程模块控制汽车在城市场景中的移动和参数改变，道路为两条车道，一条行车道和一条超车道。场景中会在两条车道间出现NPC车辆，带有计时器的交通灯作为障碍条件。",
 
     "headline5": "评分标准一",
+    "headline5-m": "评分标准",
     "score1Title": "头脑王者",
     "score1Content1": "每题答错不计分。",
     "score1Content2": "倒计时器剩余9秒或更多时间内回答正确记100分，",
@@ -57,5 +60,5 @@
     "reportContent3": "获奖参会者将同步获得评测报告，增加兴趣及专业方向指 导内容及权威教育专家或科学家的评价。",
 
     "footer": "Copyright © 2018 - 2020 Growlib.com. All Rights Reserved. 京ICP备16064072号-1 格如灵科技 版权所有 Tel:010-87798847"
-  
+
 }
