@@ -9,9 +9,13 @@ p {
 
 .slide {
     margin-top: 50px;
-    padding: 0 10px;
     .header {
         margin-bottom: 1rem;
+        span {
+            .triangle {
+                width: 100%;
+            }
+        }
         .title {
             vertical-align: middle;
             color: #333;
@@ -127,6 +131,12 @@ p {
             width: 10.8rem;
             height: 10.8rem;
         }
+    }
+}
+
+@media (max-width: 520px) {
+    .titleEN {
+        font-size: 1.3rem!important;
     }
 }
 

@@ -34,7 +34,12 @@ p {
         justify-content: center;
         align-items: center;
         .GroupText {
-            margin: 0 0 0 3rem;
+            margin: 0 0 0 5rem;
+            color: #fff;
+        }
+        .GroupTextEN {
+            width: 10rem;
+            margin: 0 0 0 4rem;
         }
     }
     .GroupItemImg1 {
@@ -104,4 +109,10 @@ p {
     align-items: center;
     background: url('/assets/img/scorePic.png') no-repeat;
     background-size: contain;
+}
+
+@media (max-width: 420px) {
+    .line1 {
+        font-size: 12px!important;
+    }
 }
