@@ -10,6 +10,14 @@
     a:link,
     a:hover {
         text-decoration: none;
+    .invalid-tooltip {
+        left: 16.67%;
+    }
+}
+
+@media(min-width: 960px) {
+    html {
+        font-size: 14px;
     }
     
     @media(min-width: 540px) {
@@ -183,17 +191,16 @@
             width: 30px;
             height: 30px;
         }
-        .active {
-            background: black;
-            a {
-                color: white;
-            }
-        }
-        .nav-lang {
-            font-size: 1.3rem;
-            padding: 0;
-        }
-        .lang {
-            display: inline-block;
-        }
     }
+    .nav-lang {
+        font-size: 1.3rem;
+        padding: 0;
+    }
+    .lang {
+        display: inline-block;
+    }
+}
+
+.form-group {
+    position: relative;
+}

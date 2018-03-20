@@ -60,10 +60,16 @@
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.password)__</label>
                         <input type="password" id="password" class="form-control col-12 col-sm-10" name="password" required placeholder="__(register.placeholder4)__">
+                        <div class="invalid-tooltip">
+                            __(register.passwordError1)__
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.passwordAgain)__</label>
                         <input type="password" id="password2" class="form-control col-12 col-sm-10" name="password2" required placeholder="__(register.placeholder4)__">
+                        <div class="invalid-tooltip">
+                            __(register.passwordError2)__
+                        </div>
                     </div>
                 </div>
             </div>
@@ -211,7 +217,7 @@
             validate('birthday');
             var password = $('#password').val();
             $('#password').removeClass('is-invalid');
-            if (password.length < 6) {
+            if(!/[\d\w\S]{8,12}/.test(password)) {
                 $('#password').addClass('is-invalid');
                 document.getElementById('password').scrollIntoView()
                 return;
@@ -250,8 +256,7 @@
                 url: "http://world-api.growlib.com/client/regitster/join_json", //url
                 data: data,
                 success: function(res) {
-                    debugger
-                    if (res.s === 808) {
+                    if(res.s === 808) {
                         document.getElementById('phone').scrollIntoView();
                         $('#mcode').addClass('is-invalid');
                     } else if (res.s === 400) {

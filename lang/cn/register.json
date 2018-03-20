@@ -30,6 +30,8 @@
     "placeholder5": "请输入姓名",
     "placeholder6": "请输入生日",
     "placeholder7": "请输入学校码",
+    "passwordError1": "请设置8-12位密码，支持数字、字母、符号，不支持空格",
+    "passwordError2": "密码不一致",
     "schoolCode": "学校码",
     "read": "你已经阅读并接受",
     "terms": "《比赛协议》",
