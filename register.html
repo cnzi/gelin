@@ -40,10 +40,12 @@
             <div class="block account row">
                 <div class="col-12 col-sm-12 col-lg-8 offset-lg-2">
                     <div class="form-title">__(register.idInfo)__</div>
+                    <!--
                     <div class="form-group row">
                         <label for="account-name" class="col-12 col-sm-2">__(register.id)__</label>
                         <input id="account" type="text" class="form-control col-12 col-sm-10" name="account" required placeholder="__(register.placeholder1)__">
                     </div>
+                    -->
                     <div class="form-group row">
                         <label for="phone-number" class="col-12 col-sm-2">__(register.phone)__</label>
                         <select name="area_code" id="phone-code" class="phone-code form-control col-5 col-sm-2">
@@ -167,32 +169,34 @@
                 }
             });
         }
+
         function loadCountry(id, target) {
             $(target).attr('disabled', false);
             $('#city-list').attr('disabled', false);
 
             $.ajax({
                 dataType: "json",
-                url: "http://world-api.growlib.com/area/getSubList_json?id="+id,
+                url: "http://world-api.growlib.com/area/getSubList_json?id=" + id,
                 success: function(r) {
                     $(target).html('')
                     $("#countryTpl").tmpl({
                         list: r.data.list,
-                    }).appendTo( target || "#province-list");
-                    if(r.data.list.length == 0) {
+                    }).appendTo(target || "#province-list");
+                    if (r.data.list.length == 0) {
                         $(target).attr('disabled', true);
                         $('#city-list').attr('disabled', true);
-                    } else if(target === '#province-list') {
+                    } else if (target === '#province-list') {
                         loadCountry(r.data.list[0].id, '#city-list');
                     }
                 }
             });
         }
+
         function validate(ele) {
-            $('#'+ele).removeClass('is-invalid');
-            if(!$('#'+ele).val()) {
+            $('#' + ele).removeClass('is-invalid');
+            if (!$('#' + ele).val()) {
                 document.getElementById(ele).scrollIntoView();
-                $('#'+ele).addClass('is-invalid');
+                $('#' + ele).addClass('is-invalid');
             }
         }
         // $('#birthday').date('jtsage-datebox');
@@ -207,18 +211,18 @@
             validate('birthday');
             var password = $('#password').val();
             $('#password').removeClass('is-invalid');
-            if(password.length < 6) {
+            if (password.length < 6) {
                 $('#password').addClass('is-invalid');
                 document.getElementById('password').scrollIntoView()
                 return;
             }
-            if($('#password').val() !== $('#password2').val()) {
+            if ($('#password').val() !== $('#password2').val()) {
                 $('#password2').addClass('is-invalid');
                 document.getElementById('password').scrollIntoView()
                 return;
             }
             var terms = $('#terms');
-            if(!terms.is(':checked')) {
+            if (!terms.is(':checked')) {
                 $('#terms').addClass('is-invalid');
                 return;
             }
@@ -228,14 +232,14 @@
             var flag = false;
             for (var i = 0; i < qs.length; i++) {
                 var item = qs[i].split('=');
-                if (!item[1] && item[0] =='school_code') {
+                if (!item[1] && item[0] == 'school_code') {
                     continue;
-                } else if(!item[1]) {
+                } else if (!item[1]) {
                     flag = true;
                 }
                 data[item[0]] = item[1];
             }
-            if(flag) {
+            if (flag) {
                 document.getElementById('account').scrollIntoView();
                 return;
             }
@@ -247,14 +251,14 @@
                 data: data,
                 success: function(res) {
                     debugger
-                    if(res.s === 808) {
+                    if (res.s === 808) {
                         document.getElementById('phone').scrollIntoView();
                         $('#mcode').addClass('is-invalid');
-                    } else if(res.s === 400) {
+                    } else if (res.s === 400) {
                         alert('params lost');
                     } else if (res.s == 200) {
                         location.href = '/portal/game/complete';
-                    } else if(res.s === 807) {
+                    } else if (res.s === 807) {
                         alert('Account has registered');
                     } else {
                         alert('Something error happened');
@@ -273,36 +277,35 @@
             var $btn = $(this)
             var timer = setInterval(function() {
                 $btn.text(--count);
-                if(count == 0) {
+                if (count == 0) {
                     clearInterval(timer);
                     count = 60;
-                    $btn.attr("disabled",false).html(text)
+                    $btn.attr("disabled", false).html(text)
                 }
             }, 1000)
             var code = $('#phone-code').val();
             var mobile = $('#phone').val();
-            if(!code) {
+            if (!code) {
                 $('#phone-code').addClass('is-invalid')
                 return;
             }
-            if(!mobile) {
+            if (!mobile) {
                 $('#phone').addClass('is-invalid')
                 return;
             }
             $('#phone-code').removeClass('is-invalid');
             $('#phone').removeClass('is-invalid')
 
-            $btn.attr("disabled",true)
+            $btn.attr("disabled", true)
             $.ajax({
                 method: 'POST',
                 dataType: "json",
                 url: "http://world-api.growlib.com/sms/send_json",
                 data: {
-                    area_code:  code,
+                    area_code: code,
                     mobile: mobile
                 },
-                success: function(r) {
-                },
+                success: function(r) {},
                 error: function(r) {
                     // $btn.attr("disabled",false).html(text)
                 }
