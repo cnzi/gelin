@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="This is a boilerplate for a Bootstrap 4.0 (beta) project">
-    <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
-    <meta name="author" content="Henrik H. Boelsmand">
+    <meta name="keywords" content="__(common.keywords)__">
+    <meta name="author" content="Wu.">
     <title>__(common.title1)__</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <!-- build:css -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -48,32 +48,28 @@
         <div class="container">
             <div class="circle-list">
                 <div class="text-center circle circleYellow">
-                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
-                        alt="">
+                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="">
                     <div class="circle-text">
                         <p>__(index.cicle1Up)__</p>
                         <p>__(index.cicle1Down)__</p>
                     </div>
                 </div>
                 <div class="text-center circle circleGray">
-                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
-                        alt="">
+                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="">
                     <div class="circle-text">
                         <p>__(index.cicle2Up)__</p>
                         <p>__(index.cicle2Down)__</p>
                     </div>
                 </div>
                 <div class="text-center circle circleYellow">
-                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
-                        alt="">
+                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="">
                     <div class="circle-text">
                         <p>__(index.cicle3Up)__</p>
                         <p>__(index.cicle3Down)__</p>
                     </div>
                 </div>
                 <div class="text-center circle circleGray">
-                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
-                        alt="">
+                    <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="">
                     <div class="circle-text">
                         <p>__(index.cicle4Up)__</p>
                         <p>__(index.cicle4Down)__</p>
@@ -377,14 +373,14 @@
             $.ajax({
                 dataType: "json",
                 url: "http://itecon.org/api/portal/lists/getDefaultCategoryPostLists?field=post.id,post_excerpt,post_title,published_time,more",
-                success: function (r) {
+                success: function(r) {
                     $("#articleTemplate").tmpl({
                         list: r.data.list,
                     }).appendTo("#articleList");
                 }
             });
         }
-        $(function () {
+        $(function() {
             loadList();
         });
     </script>

@@ -2,13 +2,16 @@
 .pageNav {
     min-width: 1200px;
 }
+
 .pagefooter {
     min-width: 1200px;
 }
+
 .main-content {
     width: 1200px;
     overflow: hidden;
 }
+
 .slide {
     margin-top: 50px;
     padding: 0 10px;
@@ -21,7 +24,8 @@
         background-color: #fff;
     }
     .header {
-        .circle, .title {
+        .circle,
+        .title {
             vertical-align: middle;
         }
         .title {
@@ -45,24 +49,26 @@
             text-align: center;
         }
         .step1 {
-            left: 229px;
-            top: 314px;
+            left: 215px;
+            top: 293px;
+            font-size: 20px;
             color: #6b471b;
         }
         .step2 {
-            left: 400px;
-            top: 314px;
+            left: 390px;
+            top: 293px;
+            font-size: 20px;
             color: #6b471b;
         }
         .step3 {
             left: 540px;
-            top: 304px;
-            font-size: 27px;
+            top: 293px;
+            font-size: 20px;
         }
         .step4 {
             left: 820px;
-            top: 304px;
-            font-size: 27px;
+            top: 293px;
+            font-size: 20px;
         }
         .content11 {
             top: 368px;
@@ -86,7 +92,7 @@
         }
         .content15 {
             top: 368px;
-            left: 975px;
+            left: 940px;
             width: 200px;
         }
     }
@@ -96,13 +102,12 @@
         margin-top: 50px;
         .item {
             padding: 0 30px;
-        }
-        .title1 {
-            height: 70px;
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-            img {
+            .title1 {
+                margin: 0 0 1rem 0;
+                text-align: center;
+                img {
+                    height: 70px;
+                }
             }
         }
     }
@@ -174,6 +179,7 @@
         color: #222;
     }
 }
+
 .slide {
     .image {
         width: 100%;
