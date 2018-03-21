@@ -12,9 +12,9 @@
 
     <!-- build:css -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/datedropper.min.css">
     <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="assets/css/prettify.css">
-    <link rel="stylesheet" href="assets/css/jtsage-datebox.min.css">
 
     <!-- endbuild -->
 </head>
@@ -138,7 +138,7 @@
     <script src="/assets/js/main.js "></script>
     <script src="/assets/js/jquery.tmpl.js "></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src="/assets/js/jtsage-datebox.min.js"></script>
+    <script src="/assets/js/datedropper.min.js"></script>
     <script id="codeTpl" type="text/x-jquery-tmpl">
         {{each(i, item) list}}
         <option value=${item.code}>${item.name}</option>
@@ -207,7 +207,7 @@
                 $('#' + ele).addClass('is-invalid');
             }
         }
-        // $('#birthday').date('jtsage-datebox');
+        $('#birthday').dateDropper();
         $('#submit').click(function(e) {
             validate('account');
             validate('password');

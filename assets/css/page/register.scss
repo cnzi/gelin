@@ -79,3 +79,20 @@
     padding-bottom: 2vw;
     margin: 0 auto;
 }
+
+.datedropper {
+    .pick-i-r:before {
+        content: ">";
+    }
+    .pick-i-l:before {
+        content: "<";
+    }
+}
+
+div.datedropper .picker .pick-btns .pick-submit:after {
+    content: "✓";
+}
+
+div.datedropper.primary .pick-lg-b .pick-sl:before, div.datedropper.primary .pick-lg-h, div.datedropper.primary .pick-m, div.datedropper.primary .pick-submit, div.datedropper.primary:before {
+    background-color: #f8b62b;
+}
