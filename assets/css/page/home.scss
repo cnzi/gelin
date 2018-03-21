@@ -503,6 +503,14 @@ body {
     }
 }
 
+@media (max-width: 350px) {
+    .circle-text {
+        p {
+            font-size: 1.8rem;
+        }
+    }
+}
+
 @media (max-width: 340px) {
     .pageDownloadList .pageDownloadItem {
         font-size: 0.8rem;
