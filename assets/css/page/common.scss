@@ -41,8 +41,6 @@
                 line-height: 18px;
             }
         }
-        .nav-item:nth-child(2) {}
-        .nav-item:nth-child(3) {}
         .gelin-nav {
             .navbar-collapse {
                 flex-grow: 1!important;
@@ -84,6 +82,11 @@
                 }
             }
         }
+    }
+
+@media(max-width: 900px) {
+    .logo {
+        height: 3rem;
     }
     
     .nav-link {
