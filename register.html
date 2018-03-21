@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This is a boilerplate for a Bootstrap 4.0 (beta) project">
+    <meta name="keywords" content="__(common.keywords)__">
     <title>__(common.nav7)__</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
     <!-- build:css -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -217,7 +219,7 @@
             validate('birthday');
             var password = $('#password').val();
             $('#password').removeClass('is-invalid');
-            if(!/[\d\w\S]{8,12}/.test(password)) {
+            if (!/[\d\w\S]{8,12}/.test(password)) {
                 $('#password').addClass('is-invalid');
                 document.getElementById('password').scrollIntoView()
                 return;
@@ -256,7 +258,7 @@
                 url: "http://world-api.growlib.com/client/regitster/join_json", //url
                 data: data,
                 success: function(res) {
-                    if(res.s === 808) {
+                    if (res.s === 808) {
                         document.getElementById('phone').scrollIntoView();
                         $('#mcode').addClass('is-invalid');
                     } else if (res.s === 400) {

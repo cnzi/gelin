@@ -44,7 +44,6 @@ html {
             display: none!important;
         }
     }
-
     .pageDownloadItem2 {
         padding: 0 1rem;
     }
@@ -84,7 +83,11 @@ html {
             display: none!important;
         }
     }
+    .nav-link {
+        margin: 0 12px 0 0!important;
+    }
 }
+
 body {
     font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
     color: black;
@@ -104,7 +107,7 @@ body {
     margin: 0 2rem 0 0;
 }
 
-.pageNav{
+.pageNav {
     .pageNav-bg {
         height: 50rem;
         width: 100%;
@@ -120,7 +123,6 @@ body {
         overflow: hidden;
     }
 }
-
 
 .title-text {
     margin-top: 150px;
@@ -212,7 +214,7 @@ body {
         font-size: 2.8rem;
         padding-bottom: 50px;
         margin: 0 auto;
-    }    
+    }
     .schedule-list {
         display: flex;
         flex-direction: row;
@@ -239,27 +241,37 @@ body {
 }
 
 @media (max-width: 992px) {
-    .pageScheduleText {      
-        p{
+    .pageScheduleText {
+        p {
             font-size: 1rem!important;
         }
     }
 }
-@media (max-width: 784px) {
 
-}
+@media (max-width: 784px) {}
+
 @media (max-width: 768px) {
     .triangle {
-        width: 3.5%!important;        
+        width: 3.5%!important;
     }
     .pageScheduleText {
-        width: 46.5%!important;     
+        width: 46.5%!important;
     }
-    .pageScheduleTex3{
+    .pageScheduleTex3 {
         margin-left: -3.5%!important;
-    }  
+    }
+    .title-text2 {
+        max-width: 100%;
+        margin-left: 0;
+        .btn-pageNav {
+            .btn-light {
+                display: block;
+                width: 7rem;
+                margin: 0 auto;
+            }
+        }
+    }
 }
-
 
 .competitionList {
     margin: 0!important;
@@ -380,6 +392,7 @@ body {
         padding: 1rem;
     }
 }
+
 .pageDownloadPicText {
     display: flex;
     align-items: center;
@@ -563,6 +576,7 @@ a:hover {
 .partner {
     background-color: #fafafa;
 }
+
 .pagePartner {
     padding-bottom: 2rem;
     .logo-list {

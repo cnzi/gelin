@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This is a boilerplate for a Bootstrap 4.0 (beta) project">
+    <meta name="keywords" content="__(common.keywords)__">
     <title>__(common.nav5)__</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/list.css">
 </head>
@@ -35,20 +37,20 @@
     <script src="assets/js/jquery.tmpl.js "></script>
     <script id="articleTemplate" type="text/x-jquery-tmpl">
         {{each(i, item) list}}
-            <a href="/portal/game/article?id=${item.id}">
-                <div class="container pageListItem">
-                    <div class="row">
-                        <div class="text-right cover col-5 col-sm-4 ">
-                            <img src="${item.more.thumbnail}" alt="">
-                        </div>
-                        <div class="text-left col-7 col-sm-8 pageListItemRight">
-                            <h2 class="title">${item.post_title}</h2>
-                            <p>${item.post_excerpt}</p>
-                            <div class="time">${item.published_time.split(' ')[0]}</div>
-                        </div>
+        <a href="/portal/game/article?id=${item.id}">
+            <div class="container pageListItem">
+                <div class="row">
+                    <div class="text-right cover col-5 col-sm-4 ">
+                        <img src="${item.more.thumbnail}" alt="">
+                    </div>
+                    <div class="text-left col-7 col-sm-8 pageListItemRight">
+                        <h2 class="title">${item.post_title}</h2>
+                        <p>${item.post_excerpt}</p>
+                        <div class="time">${item.published_time.split(' ')[0]}</div>
                     </div>
                 </div>
-            </a>
+            </div>
+        </a>
         {{/each}}
     </script>
     <script type="text/javascript">

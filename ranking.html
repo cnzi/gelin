@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This is a boilerplate for a Bootstrap 4.0 (beta) project">
+    <meta name="keywords" content="__(common.keywords)__">
     <title>__(common.nav4)__</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/ranking.css">
 </head>
@@ -105,9 +107,9 @@
                     </div>
                 </li>
                 {{each(i, item) pages}}
-                    <li class="page-item ${current == i+1? 'active' : ''}">
-                        <span class="page-link page">${i+1}</span>
-                    </li>
+                <li class="page-item ${current == i+1? 'active' : ''}">
+                    <span class="page-link page">${i+1}</span>
+                </li>
                 {{/each}}
                 <li class="page-item">
                     <div class="page-link next" aria-label="Next">
@@ -122,10 +124,11 @@
         var currentPage = 1;
         var tabId = 1;
         var totalPage = 1;
+
         function showData(id, page) {
             $.ajax({
                 dataType: "json",
-                url: "http://world-api.growlib.com/game/rank/index_json?group="+ id + "&page="+page,
+                url: "http://world-api.growlib.com/game/rank/index_json?group=" + id + "&page=" + page,
                 success: function(r) {
                     totalPage = r.data.totalPage;
                     const tpl = $("#tableTpl").tmpl({
@@ -133,14 +136,14 @@
                         pages: new Array(r.data.totalPage).fill(''),
                         current: r.data.page
                     });
-                    $( "#rank-list" + id).html(tpl);
+                    $("#rank-list" + id).html(tpl);
                 }
             });
         }
         $(function() {
             $('#myTab .nav li:first-child a').tab('show');
             showData(1, 1);
-            $('#myTab a').click(function (e) {
+            $('#myTab a').click(function(e) {
                 e.preventDefault();
                 var id = e.target.getAttribute('data-value');
                 tabId = id;
@@ -148,21 +151,21 @@
                 $(this).tab('show');
             });
             $('#myTabContent').delegate('.previous', 'click', function() {
-                if(currentPage <= 1) {
+                if (currentPage <= 1) {
                     return;
                 }
                 currentPage = --page;
                 showData(currentPage, tabId)
             });
             $('#myTabContent').delegate('.next', 'click', function() {
-                if(currentPage >= totalPage - 1) {
+                if (currentPage >= totalPage - 1) {
                     return;
                 }
                 showData(++page, tabId)
             });
             $('#myTabContent').delegate('.page', 'click', function(e) {
                 var page = e.target.innerText;
-                if(page == currentPage) {
+                if (page == currentPage) {
                     return;
                 }
                 currentPage = +page;
