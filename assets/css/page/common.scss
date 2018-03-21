@@ -47,6 +47,11 @@
     .nav-item:nth-child(3) {
         display: none;
     }
+    .gelin-nav {
+        .navbar-collapse {
+            flex-grow: 1!important;
+        }
+    }
 }
 
 @media(max-width: 900px) {
@@ -67,7 +72,7 @@
             background-color: rgba(34, 34, 34, 0.8)!important;
         }
         .navbar-nav .nav-item .nav-link {
-            color: #303030;
+            color: #999;
             line-height: 18px;
         }
         .logo {
