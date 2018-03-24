@@ -18,6 +18,10 @@
             font-size: 1.5rem;
         }
     }
+    #mcodeBtn {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .form-footer {
         margin: 10px 0;
         text-align: center;
