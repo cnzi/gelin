@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     replace = require('gulp-replace'),
     cssmin = require('gulp-cssmin'),
-    htmlPartial = require('gulp-html-partial');
+    htmlPartial = require('gulp-html-partial'),
+    imagemin = require('gulp-imagemin');
 
 gulp.task("concatScripts", ["js"], function () {
     return gulp.src([
@@ -96,10 +97,16 @@ gulp.task('statics', function() {
 // 压缩图标到dist，todo: 压缩插件还没配置
 gulp.task('build-img', function() {
     return gulp.src(['static/assets/img/*', 'static/assets/img/logo/*'])
+        .pipe(imagemin())
         .pipe(gulp.dest('dist/assets/img/'))
 });
 
-gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics', 'build-img'], function () {
+gulp.task('move-img', function() {
+    return gulp.src(['static/assets/img/*', 'static/assets/img/logo/*'])
+        .pipe(gulp.dest('dist/assets/img/'))
+});
+
+gulp.task("build", ['minifyScripts', 'minifyCss', 'localize', 'statics', 'move-img'], function () {
     return gulp.src(['static/*.html', 'static/favicon.ico'])
         .pipe(gulp.dest('dist/'));
 });
