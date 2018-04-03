@@ -8,6 +8,10 @@
 .register-form {
     text-align: center;
     padding-bottom: 50px;
+    .input-group {
+        border: none;
+        padding: 0;
+    }
     .block {
         border: 1px solid #eee;
         padding: 10px 30px;
