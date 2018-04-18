@@ -30,7 +30,7 @@ gulp.task("concatScripts", ["js"], function () {
 });
 
 gulp.task('js', function() {
-    return gulp.src("assets/js/page/*.js")
+    return gulp.src(["assets/js/page/*.js", "assets/js/page/**/*"])
         .pipe(gulp.dest('static/assets/js/'));
 });
 

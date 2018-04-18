@@ -143,6 +143,8 @@
     <script src="/assets/js/jquery.tmpl.js "></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="/assets/js/datedropper.min.js"></script>
+    <script src="/assets/js/layer/layer.js"></script>
+    <script src="/assets/js/laydate/laydate.js"></script>
     <script id="codeTpl" type="text/x-jquery-tmpl">
         {{each(i, item) list}}
         <option value=${item.code}>${item.name}</option>
@@ -219,7 +221,10 @@
             return null; //返回参数值
         }
 
-        $('#birthday').dateDropper();
+        laydate.render({
+            elem: '#birthday',
+            lang: '__(common.lang)__'
+        });
         $('#submit').click(function(e) {
             validate('password');
             validate('password2');
@@ -228,6 +233,7 @@
             validate('real-name');
             validate('phone-code');
             validate('birthday');
+
             var password = $('#password').val();
             $('#password').removeClass('is-invalid');
             if (!/^[\d\w\S]{8,12}$/.test(password)) {
@@ -269,21 +275,30 @@
                 url: "http://world-api.growlib.com/client/regitster/join_json", //url
                 data: data,
                 success: function(res) {
+                    var msg = '';
                     if (res.s === 808) {
                         document.getElementById('phone').scrollIntoView();
                         $('#mcode').addClass('is-invalid');
                     } else if (res.s === 400) {
-                        alert('params lost');
+                        msg = 'params lost';
                     } else if (res.s == 200) {
                         location.href = '/portal/game/complete';
+                        return;
                     } else if (res.s === 807) {
-                        alert('Account has registered');
+                        msg = 'Account has registered';
                     } else {
-                        alert('Something error happened');
+                        msg = 'Something error happened';
                     }
+                    layer.alert(msg, {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                    });
                 },
                 error: function(e) {
-                    alert("报名异常");
+                    layer.alert('报名异常', {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                    });
                 }
             });
             e.preventDefault();
@@ -291,11 +306,14 @@
         });
         var count = 60;
         $('#mcodeBtn').click(function(e) {
-            if($('#phone').val()) {
-                return;
-            }
             var text = $(this).text();
             var $btn = $(this)
+            var code = $('#phone-code').val();
+            var mobile = $('#phone').val();
+            if (!mobile) {
+                $('#phone-code').addClass('is-invalid')
+                return;
+            }
             var timer = setInterval(function() {
                 $btn.text(--count);
                 if (count == 0) {
@@ -303,17 +321,7 @@
                     count = 60;
                     $btn.attr("disabled", false).html(text)
                 }
-            }, 1000)
-            var code = $('#phone-code').val();
-            var mobile = $('#phone').val();
-            if (!code) {
-                $('#phone-code').addClass('is-invalid')
-                return;
-            }
-            if (!mobile) {
-                $('#phone').addClass('is-invalid')
-                return;
-            }
+            }, 1000);
             $('#phone-code').removeClass('is-invalid');
             $('#phone').removeClass('is-invalid')
 
