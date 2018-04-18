@@ -291,6 +291,9 @@
         });
         var count = 60;
         $('#mcodeBtn').click(function(e) {
+            if($('#phone').val()) {
+                return;
+            }
             var text = $(this).text();
             var $btn = $(this)
             var timer = setInterval(function() {
