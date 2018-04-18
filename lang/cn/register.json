@@ -36,5 +36,9 @@
     "read": "你已经阅读并接受",
     "terms": "《比赛协议》",
     "agreement": "",
-    "birthday": "生日"
+    "birthday": "生日",
+    "error1": "报名失败",
+    "error2": "参数缺失",
+    "error3": "账号已经被注册",
+    "error4": "异常错误"
 }
