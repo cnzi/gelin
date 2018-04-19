@@ -210,6 +210,8 @@ body {
         .pageScheduleText {
             width: 23.8%;
             display: flex;
+            /* Safari */
+            flex: auto;
             flex-direction: column;
             align-items: center;
             p {
@@ -290,7 +292,7 @@ body {
 }
 
 .pageScheduleImg {
-    height: 100%;
+    //height: 100%;    
     width: 100%;
 }
 
