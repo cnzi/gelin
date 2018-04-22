@@ -252,7 +252,7 @@
         <h1>__(index.informationTitle)__</h1>
 
         <div class="container">
-            <div class="row" id="articleList">
+            <div id="articleList">
 
             </div>
         </div>
@@ -352,24 +352,28 @@
     <script src="assets/js/home.js "></script>
     <script src="assets/js/jquery.tmpl.js "></script>
     <script id="articleTemplate" type="text/x-jquery-tmpl">
-        {{each(i, item) list}}
-        <div class="col-md-6 col-12">
-            <a href="/portal/game/article?id=${item.id}" target="_blank">
-                <div class="container">
-                    <div class="row pageInformationItem">
-                        <div class="cover col-6">
-                            <img src="${item.more.thumbnail}" alt="">
-                        </div>
-                        <div class="text-left col-6">
-                            <h4 class="title">${item.post_title}</h4>
-                            <p class="content">${item.post_excerpt}</p>
-                            ${item.published_time.split(' ')[0]}
+        {{each(i, item) list}} {{if i%2==0}}
+        <div class="row cInfo">
+            {{/if}}
+            <div class="col-md-6 col-12">
+                <a href="/portal/game/article?id=${item.id}" target="_blank">
+                    <div class="container">
+                        <div class="row pageInformationItem">
+                            <div class="cover col-6">
+                                <img src="${item.more.thumbnail}" alt="">
+                            </div>
+                            <div class="text-left col-6">
+                                <h4 class="title">${item.post_title}</h4>
+                                <p class="content">${item.post_excerpt}</p>
+                                ${item.published_time.split(' ')[0]}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            {{if i%2==1 }}
         </div>
-        {{/each}}
+        {{/if}} {{/each}}
     </script>
     <script type="text/javascript">
         function loadList() {
