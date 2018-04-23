@@ -47,7 +47,12 @@ gulp.task('compileSass', function () {
     return gulp.src(["assets/css/*.css", "assets/css/main.scss", "assets/css/page/*.scss"])
         .pipe(maps.init())
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer())
+        .pipe(autoprefixer({
+            "browsers": [
+                "ios 7",
+                "ie >= 8"
+            ]
+        }))
         .pipe(maps.write('./'))
         .pipe(gulp.dest('static/assets/css'))
         .pipe(browserSync.stream());

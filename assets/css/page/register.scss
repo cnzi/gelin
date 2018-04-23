@@ -44,6 +44,7 @@
         line-height: 2rem;
         text-align: left;
         padding: 5px;
+        white-space: nowrap;
         &:after {
             content: ':';
             margin: 0 2px;

@@ -87,13 +87,13 @@
             <tbody>
                 {{each(i, item) list}}
                 <tr>
-                    <td>${item.total_order}</td>
-                    <td>${item.real_name}</td>
-                    <td>${item.car_result}</td>
-                    <td>${item.car_order}</td>
-                    <td>${item.code_score}</td>
-                    <td>${item.qa_score}</td>
-                    <td>${item.total_score}</td>
+                    <td>${item.total_rank}</td>
+                    <td>${item.name}</td>
+                    <td>${item.car_total_scores}</td>
+                    <td>${item.car_rank}</td>
+                    <td>${item.qa_total_scores}</td>
+                    <td>${item.qa_rank}</td>
+                    <td>${item.total_scores}</td>
                 </tr>
                 {{/each}}
             </tbody>

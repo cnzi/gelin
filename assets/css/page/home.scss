@@ -60,7 +60,7 @@ html {
         }
     }
     .competitionList .pageScheduleCompetition {
-        padding: 60px 5px 0;
+        padding: 60px 0;
     }
 }
 
@@ -274,12 +274,12 @@ body {
 
 .pageScheduleCompetition {
     padding: 100px 15px 0;
-    &:first-child {
-        padding-left: 0;
-    }
-    &:last-child {
-        padding-right: 0;
-    }
+    // &:first-child {
+    //     padding-left: 0;
+    // }
+    // &:last-child {
+    //     padding-right: 0;
+    // }
     position: relative;
     overflow: hidden;
     a {
@@ -545,6 +545,7 @@ a:hover {
     .cover {
         overflow: hidden;
         height: 185px;
+        text-align: center;        
     }
     .title {
         line-height: 2rem;
