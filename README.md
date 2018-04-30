@@ -11,13 +11,13 @@ A [Bootstrap](https://getbootstrap.com/) 4.0 (Beta 3) boiler plate with [sass](h
 # 1 克隆仓库
 git clone https://github.com/cnzi/geling.git
 
-# 打开目录
-cd bootstrap-4-boilerplate
+# 2 进入目录
+cd geling
 
-# 安装依赖
+# 3 安装依赖
 npm install
 
-# 启动脚本
+# 4 启动脚本
 gulp serve 启动本地预览服务
 gulp 生成dist文件
 ```
@@ -25,7 +25,7 @@ gulp 生成dist文件
 ## 脚本相关
 
 ### 前端模板引擎
-前端模板引起在浏览器中使用js, 生成html文件插入到页面中，本项目使用jquery tmpl模板引擎，[教程]('https://www.cnblogs.com/zhuzhiyuan/p/3510175.html');
+前端模板引起在浏览器中使用js，生成html文件插入到页面中，本项目使用jquery tmpl模板引擎，[教程]("https://www.cnblogs.com/zhuzhiyuan/p/3510175.html")
 
 首页在页面中定义模板
 ```
@@ -49,7 +49,7 @@ gulp 生成dist文件
 </script>
 ```
 
-使用ajax，请求数据，生成html, 插入页面中
+使用ajax，请求数据，生成html，插入页面中
 ```
 $.ajax({
     dataType: "json",

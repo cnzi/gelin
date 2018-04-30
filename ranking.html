@@ -128,7 +128,7 @@
         function showData(id, page) {
             $.ajax({
                 dataType: "json",
-                url: "http://world-api.growlib.com/game/rank/index_json?group=" + id + "&page=" + page,
+                url: "http://world-api.growlib.com/game/rank/index_json?group=" + page + "&page=" + id,
                 success: function(r) {
                     totalPage = r.data.totalPage;
                     const tpl = $("#tableTpl").tmpl({
@@ -147,6 +147,7 @@
                 e.preventDefault();
                 var id = e.target.getAttribute('data-value');
                 tabId = id;
+                currentPage = 1;
                 showData(id, 1);
                 $(this).tab('show');
             });
@@ -154,14 +155,13 @@
                 if (currentPage <= 1) {
                     return;
                 }
-                currentPage = --page;
-                showData(currentPage, tabId)
+                showData(tabId, --currentPage)
             });
             $('#myTabContent').delegate('.next', 'click', function() {
-                if (currentPage >= totalPage - 1) {
+                if (currentPage >= totalPage) {
                     return;
                 }
-                showData(++page, tabId)
+                showData(tabId, ++currentPage)
             });
             $('#myTabContent').delegate('.page', 'click', function(e) {
                 var page = e.target.innerText;
@@ -169,7 +169,7 @@
                     return;
                 }
                 currentPage = +page;
-                showData(+page, tabId)
+                showData(tabId, +page)
             })
         });
     </script>
